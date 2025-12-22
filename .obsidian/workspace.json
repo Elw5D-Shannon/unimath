@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "欢迎.md",
+                "file": "比较判别法.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "欢迎"
+              "title": "比较判别法"
             }
           }
         ]
@@ -201,7 +201,8 @@
   },
   "active": "a805a936be4a786b",
   "lastOpenFiles": [
-    "README.md",
-    "欢迎.md"
+    "根值判别法.md",
+    "欢迎.md",
+    "README.md"
   ]
 }
