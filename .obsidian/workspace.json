@@ -11,10 +11,14 @@
             "id": "197b6978d7d47b87",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "课前测/12.23/课前测.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "课前测"
             }
           }
         ]
