@@ -1,2 +1,2 @@
-# advanced-math-notes
-
+# 一起数学----高等数学笔记协作平台
+大家可以把Markdown高数笔记上传到此处
