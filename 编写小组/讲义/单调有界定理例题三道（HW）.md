@@ -1,4 +1,4 @@
-是的，这是一份礼物
+是的，这是一份礼物~
 
 ---
 
@@ -6,7 +6,6 @@
 > （1）单调递增有上界的数列，必有极限且$\mathop {\lim }\limits_{n \to \infty } {a_n} = \sup \{ {a_n}\} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} (n \in N)$；
 > （2）单调递减有下界的数列，必有极限且$\mathop {\lim }\limits_{n \to \infty } {a_n} = \inf \{ {a_n}\} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} (n \in N)$.
 
-先来一道习题练练手吧~
 
 >[!example]  例一
 >设$a > 0,\sigma  > 0,{a_1} = \frac{1}{2}\left( {a + \frac{\sigma }{a}} \right),{a_{n + 1}} = \frac{1}{2}\left( {{a_n} + \frac{\sigma }{{{a_n}}}} \right),n = 1,2,...$
@@ -47,3 +46,65 @@ $\begin{array}{l} {x_n} = \sum\limits_{k = 1}^n {\frac{1}{k}}  - \ln \left( {\fr
 $$\ln {\kern 1pt} n - \ln (n - 1) = \frac{1}{{{\xi _n}}}，其中n - 1 < {\xi _n} < n.$$因此有$\left| {{x_n} - {x_{n - 1}}} \right| = \frac{{n - {\xi _n}}}{{n \cdot {\xi _n}}} < \frac{1}{{{{(n - 1)}^2}}}$
 而$\sum\limits_{n = 1}^\infty  {\frac{1}{{{{(n - 1)}^2}}}}$收敛，故$\sum\limits_{n = 1}^\infty  {\left| {{x_n} - {x_{n - 1}}} \right|}$收敛，从而${x_n} = \sum\limits_{k = 1}^n {\left( {{x_k} - {x_{k - 1}}} \right)}  + {x_1}$也收敛.
 因此，数列$\ {x_n}$收敛，即 $\mathop {\lim }\limits_{n \to \infty } {x_n}$ 存在.
+
+>[!example] 例三  
+>令$c>0$，定义整序变量数列为: $x_1 = \sqrt{c}, x_2 = \sqrt{c +\sqrt{c}}, x_3 = \sqrt{c+\sqrt{c+\sqrt{c}}}, \cdots$
+>求$\mathop {\lim }\limits_{n \to \infty }{x_n}$
+
+ $x_n = \underbrace{\sqrt{c+\sqrt{c+\cdots\sqrt{c}}}}_{n\ \text{个根式}}$。
+
+ $x_{n+1} = \sqrt{c+x_n}$。
+
+使用数学归纳法证明，整序变量 $x_n$ 单调增加, 同时有上界
+
+**证明 $x_n$ 单调：
+
+当 $n=1$ 时命题显然成立。
+假设当 $n = k$ 时命题成立，即 $x_{k+1} > x_k$。
+考虑 $n = k+1$ 的情形：
+$$
+x_{k+2} = \sqrt{c + x_{k+1}},\quad x_{k+1} = \sqrt{c + x_k}
+$$
+由归纳假设 $x_{k+1} > x_k$，可得：
+$$
+c + x_{k+1} > c + x_k
+$$
+所以：
+$$
+\sqrt{c + x_{k+1}} > \sqrt{c + x_k}
+$$
+即：$x_{k+2} > x_{k+1}$，故对一切正整数 $n$，都有 $x_{n+1} > x_n$，即 $\{x_n\}$ 是单调增加序列。
+
+**证明 $x_n$ 有上界（例如上界为 $\sqrt{c} + 1$）
+
+当 $n=1$ 时命题成立。
+考虑 $n = k+1$ 的情形，由归纳假设 $x_k < \sqrt{c} + 1$，可得：：
+$$
+x_{k+1} = \sqrt{c + x_k}< c + (\sqrt{c} + 1)
+$$
+
+为了证明 $x_{k+1} < \sqrt{c} + 1$，只需证明：
+$$
+\sqrt{c + (\sqrt{c} + 1)} \le \sqrt{c} + 1
+$$
+两边平方（因为两边均为正数）：
+$$
+c + \sqrt{c} + 1 \le c + 2\sqrt{c} + 1
+$$
+化简得：
+$$
+\sqrt{c} \le 2\sqrt{c}
+$$
+由于 $c > 0$，此不等式显然成立，且等号仅在 $\sqrt{c} = 0$ 时成立，这与 $c > 0$ 矛盾，故实际上有严格不等式：
+$$
+\sqrt{c + (\sqrt{c} + 1)} < \sqrt{c} + 1
+$$
+因此：
+$$
+x_{k+1} < \sqrt{c} + 1
+$$
+由数学归纳法，对一切正整数 $n$，都有 $x_n < \sqrt{c} + 1$，即 $\{x_n\}$ 有上界。
+
+因此序列收敛，有极限，不妨设 $\lim x_n = a$ , 则: $a = \sqrt{a+c}$。
+
+解方程得: $a = \dfrac{\sqrt{4c+1}+1}{2}$。（负根舍去）
