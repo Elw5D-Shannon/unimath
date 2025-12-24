@@ -11,14 +11,14 @@
             "id": "b6107f657aaca089",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/plugins/obsidian-git/manifest.json",
-                "bFile": ".obsidian/plugins/obsidian-git/manifest.json",
-                "aRef": ""
+                "file": "Chapter 2-3 极限/根值判别法.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: manifest.json"
+              "icon": "lucide-file",
+              "title": "根值判别法"
             }
           }
         ]
@@ -191,8 +191,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b73c6ede16e8014f",
+  "active": "b6107f657aaca089",
   "lastOpenFiles": [
+    "Chapter 2-3 极限/比值判别法.md",
     "Chapter 2 极限/比值判别法.md",
     "未命名.base",
     "Chapter 2 极限/根值判别法.md",
