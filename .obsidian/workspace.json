@@ -11,14 +11,10 @@
             "id": "b6107f657aaca089",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/plugins/obsidian-git/manifest.json",
-                "bFile": ".obsidian/plugins/obsidian-git/manifest.json",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: manifest.json"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -191,8 +187,37 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b73c6ede16e8014f",
+  "active": "cd457af850fd87f8",
   "lastOpenFiles": [
+    "编写小组/二阶微分推导.md",
+    "编写小组/课后测/课后测解析版2.md",
+    "编写小组/课后测/课后测解析版1.md",
+    "编写小组/课后测/课后测2.md",
+    "编写小组/课后测/课后测1.md",
+    "编写小组/课后测",
+    "编写小组/课前测/课前测解析版2.md",
+    "编写小组/课前测/课前测解析版1.md",
+    "编写小组/课前测/课前测2.md",
+    "编写小组/课前测/课前测1.md",
+    "编写小组/课前测",
+    "编写小组/讲义/图片/球浸入水示意图.jpg",
+    "编写小组/讲义/图片/应用题梯子.jpg",
+    "编写小组/讲义/图片/应用题人拉船.png",
+    "编写小组/讲义/图片",
+    "编写小组/讲义/隐函数，参数方程和应用题（解析版）.md",
+    "编写小组/讲义/隐函数，参数方程和应用题.md",
+    "编写小组/讲义/级数敛散性的基本思路和方法（解析版）.md",
+    "编写小组/讲义/级数敛散性的基本思路和方法.md",
+    "编写小组/讲义/极限计算的基本方法（解析版）.md",
+    "编写小组/讲义/极限计算的基本方法（解析版2）.md",
+    "编写小组/讲义/极限计算的基本方法.md",
+    "编写小组/讲义/二阶微分推导.md",
+    "编写小组/讲义",
+    "编写小组",
+    "小测/12.22/课前测.md",
+    "小测/12.22/课后测(解析).md",
+    "Chapter 2-3 极限/根值判别法.md",
+    "Chapter 2-3 极限/比值判别法.md",
     "Chapter 2 极限/比值判别法.md",
     "未命名.base",
     "Chapter 2 极限/根值判别法.md",
