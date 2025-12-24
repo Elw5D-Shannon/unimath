@@ -1,4 +1,5 @@
 *.un
 .vs/
 .vscode/
+.obsidian/
 .obsidian/*

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "72e85d6a719b99af",
+        "id": "1e389642e726fa9e",
         "type": "tabs",
         "children": [
           {
-            "id": "b6107f657aaca089",
+            "id": "53d90fc7356c20fc",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,8 +168,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           }
         ],
@@ -187,14 +187,17 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false,
-      "obsidian-git:Open Git source control": false
+      "bases:创建新数据库": false
     }
   },
-  "active": "b6107f657aaca089",
+  "active": "53d90fc7356c20fc",
   "lastOpenFiles": [
-    "编写小组/课后测/课后测2.md",
     "编写小组/讲义/单调有界准则与介值定理.md",
+    "conflict-files-obsidian-git.md",
+    "编写小组/课后测/课后测3.md",
+    "编写小组/课前测/课前测3.md",
+    "编写小组/讲义/证明题方法：单调有界定理，介值定理.md",
+    "编写小组/课后测/课后测2.md",
     "编写小组/讲义/隐函数，参数方程和应用题（解析版）.md",
     "README.md",
     "未命名.md",
@@ -223,10 +226,6 @@
     "编写小组/课前测",
     "编写小组",
     "Chapter 2-3 极限/比值判别法.md",
-    "Chapter 2 极限/比值判别法.md",
-    "未命名.base",
-    "Chapter 2 极限/根值判别法.md",
-    "Chapter 2 极限/比较判别法.md",
-    "小测/12.23/课后测(解析).md"
+    "未命名.base"
   ]
 }
