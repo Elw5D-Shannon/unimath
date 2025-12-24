@@ -13,12 +13,12 @@
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": "编写小组/讲义/级数敛散性的基本思路和方法（解析版）.md",
-                "bFile": "编写小组/讲义/级数敛散性的基本思路和方法（解析版）.md",
+                "aFile": "unimath/欢迎.md",
+                "bFile": "unimath/欢迎.md",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: 级数敛散性的基本思路和方法（解析版）"
+              "title": "Diff: 欢迎"
             }
           }
         ]
@@ -191,7 +191,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b6107f657aaca089",
+  "active": "cd457af850fd87f8",
   "lastOpenFiles": [
     "unimath/欢迎.md",
     "编写小组/讲义/隐函数，参数方程和应用题.md",
