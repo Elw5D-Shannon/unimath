@@ -3,5 +3,3 @@
 *.pdf
 .vscode/
 .obsidian/
-.obsidian/*
-/.obsidian/*
