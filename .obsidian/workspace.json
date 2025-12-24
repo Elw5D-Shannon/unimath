@@ -20,8 +20,51 @@
               "icon": "lucide-file",
               "title": "介值定理例题"
             }
+          },
+          {
+            "id": "cd7d011fbf651eac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "介值定理例题.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "介值定理例题"
+            }
+          },
+          {
+            "id": "906a5c19786d30c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "介值定理例题.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "介值定理例题"
+            }
+          },
+          {
+            "id": "13bc134bb0804c7d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -191,17 +234,42 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b6107f657aaca089",
+  "active": "13bc134bb0804c7d",
   "lastOpenFiles": [
-    "隐函数，参数方程和应用题（解析版）.md",
     "介值定理例题.md",
+    "conflict-files-obsidian-git.md",
+    "隐函数，参数方程和应用题（解析版）.md",
+    "编写小组/讲义/图片/球浸入水示意图.jpg",
+    "编写小组/讲义/图片/应用题梯子.jpg",
+    "编写小组/讲义/图片/应用题人拉船.png",
+    "编写小组/课后测/课后测解析版2.md",
+    "编写小组/课后测/课后测解析版1.md",
+    "编写小组/课后测/课后测3.md",
+    "编写小组/课后测/课后测2.md",
+    "编写小组/课后测/课后测1.md",
+    "编写小组/课前测/课前测解析版2.md",
+    "编写小组/课前测/课前测解析版1.md",
+    "编写小组/课前测/课前测3.md",
+    "编写小组/课前测/课前测2.md",
+    "编写小组/课前测/课前测1.md",
+    "编写小组/讲义/隐函数，参数方程和应用题（解析版）.md",
+    "编写小组/讲义/隐函数，参数方程和应用题.md",
+    "编写小组/讲义/证明题方法：单调有界定理，介值定理.md",
+    "编写小组/讲义/级数敛散性的基本思路和方法（解析版）.md",
+    "编写小组/讲义/级数敛散性的基本思路和方法.md",
+    "编写小组/讲义/极限计算的基本方法（解析版）.md",
+    "编写小组/讲义/极限计算的基本方法（解析版2）.md",
+    "编写小组/讲义/极限计算的基本方法.md",
+    "编写小组/讲义/图片",
+    "编写小组/讲义/二阶微分推导.md",
+    "编写小组/课后测",
+    "编写小组/二阶微分推导.md",
+    "编写小组/课前测",
+    "编写小组/讲义",
+    "编写小组",
     "Chapter 2-3 极限/根值判别法.md",
     "Chapter 4 微积分基础/隐函数求导和应用题(1)(1).md",
     "Chapter 2-3 极限/比值判别法.md",
-    "Chapter 2 极限/比值判别法.md",
-    "未命名.base",
-    "Chapter 2 极限/根值判别法.md",
-    "Chapter 2 极限/比较判别法.md",
-    "小测/12.23/课后测(解析).md"
+    "未命名.base"
   ]
 }
