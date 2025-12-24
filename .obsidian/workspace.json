@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Chapter 2-3 极限/根值判别法.md",
+                "file": "介值定理例题.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "根值判别法"
+              "title": "介值定理例题"
             }
           }
         ]
@@ -193,6 +193,10 @@
   },
   "active": "b6107f657aaca089",
   "lastOpenFiles": [
+    "隐函数，参数方程和应用题（解析版）.md",
+    "介值定理例题.md",
+    "Chapter 2-3 极限/根值判别法.md",
+    "Chapter 4 微积分基础/隐函数求导和应用题(1)(1).md",
     "Chapter 2-3 极限/比值判别法.md",
     "Chapter 2 极限/比值判别法.md",
     "未命名.base",
