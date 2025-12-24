@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编写小组/讲义/隐函数，参数方程和应用题（解析版）.md",
+                "file": "编写小组/讲义/单调有界准则与介值定理.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "隐函数，参数方程和应用题（解析版）"
+              "title": "单调有界准则与介值定理"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "编写小组/讲义/隐函数，参数方程和应用题（解析版）.md",
+                "file": "编写小组/讲义/单调有界准则与介值定理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "隐函数，参数方程和应用题（解析版） 的反向链接列表"
+              "title": "单调有界准则与介值定理 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编写小组/讲义/隐函数，参数方程和应用题（解析版）.md",
+                "file": "编写小组/讲义/单调有界准则与介值定理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "隐函数，参数方程和应用题（解析版） 的出链列表"
+              "title": "单调有界准则与介值定理 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "编写小组/讲义/隐函数，参数方程和应用题（解析版）.md",
+                "file": "编写小组/讲义/单调有界准则与介值定理.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "隐函数，参数方程和应用题（解析版） 的大纲"
+              "title": "单调有界准则与介值定理 的大纲"
             }
           },
           {
@@ -194,18 +194,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f4498e565d13b629",
+  "active": "53d90fc7356c20fc",
   "lastOpenFiles": [
+    "编写小组/讲义/证明题方法：单调有界定理，介值定理.md",
+    "编写小组/讲义/隐函数，参数方程和应用题（解析版）.md",
     "隐函数，参数方程和应用题（解析版）.md",
     "介值定理例题.md",
     "隐函数，参数方程和应用题（解析版）.pdf",
-    "编写小组/讲义/隐函数，参数方程和应用题（解析版）.md",
     "编写小组/讲义/极限计算的基本方法（解析版2）.md",
     "编写小组/课后测/课后测3.md",
     "编写小组/讲义/单调有界准则与介值定理.md",
     "conflict-files-obsidian-git.md",
     "编写小组/课前测/课前测3.md",
-    "编写小组/讲义/证明题方法：单调有界定理，介值定理.md",
     "编写小组/课后测/课后测2.md",
     "README.md",
     "未命名.md",
