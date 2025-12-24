@@ -1,5 +1,6 @@
 *.un
 .vs/
+*.pdf
 .vscode/
 .obsidian/
 .obsidian/*
