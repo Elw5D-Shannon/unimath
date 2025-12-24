@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "72e85d6a719b99af",
+        "id": "74eb0d48e67c6cdf",
         "type": "tabs",
         "children": [
           {
-            "id": "b6107f657aaca089",
+            "id": "f29c9b0afd2f94f4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "编写小组/讲义/证明题方法：单调有界定理，介值定理.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "证明题方法：单调有界定理，介值定理"
             }
           }
         ]
@@ -187,13 +191,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "cd457af850fd87f8",
+  "active": "f29c9b0afd2f94f4",
   "lastOpenFiles": [
+    "编写小组/课前测/课前测3.md",
+    "编写小组/讲义/证明题方法：单调有界定理，介值定理.md",
+    "编写小组/课后测/课后测3.md",
+    "编写小组/课后测/课后测解析版1.md",
+    "编写小组/课后测/课后测1.md",
+    "README.md",
+    "小测/12.22/课前测解析版.md",
     "编写小组/二阶微分推导.md",
     "编写小组/课后测/课后测解析版2.md",
-    "编写小组/课后测/课后测解析版1.md",
     "编写小组/课后测/课后测2.md",
-    "编写小组/课后测/课后测1.md",
     "编写小组/课后测",
     "编写小组/课前测/课前测解析版2.md",
     "编写小组/课前测/课前测解析版1.md",
@@ -218,10 +227,6 @@
     "小测/12.22/课后测(解析).md",
     "Chapter 2-3 极限/根值判别法.md",
     "Chapter 2-3 极限/比值判别法.md",
-    "Chapter 2 极限/比值判别法.md",
-    "未命名.base",
-    "Chapter 2 极限/根值判别法.md",
-    "Chapter 2 极限/比较判别法.md",
-    "小测/12.23/课后测(解析).md"
+    "未命名.base"
   ]
 }
