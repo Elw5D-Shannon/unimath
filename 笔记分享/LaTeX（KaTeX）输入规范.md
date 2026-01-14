@@ -4,3 +4,4 @@
 3. 微分算子d应当用正体，被微分的表达式用正常的斜体：$\mathrm{d}f(x)=f'(x)\mathrm{d}x$
 4. 极限和求和求积符号用\limits，如$\lim\limits_{x\to0}$和$\sum\limits_{n=0}^{\infty}$
 5. \$\$双美元符号之间不要打回车！除非你有\begin{...}\end{...}\$\$
+6. 矩阵和向量要加粗，用\boldsymbol{}，比如$\boldsymbol{A},\boldsymbol{x}$。
