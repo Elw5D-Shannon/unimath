@@ -19,6 +19,10 @@ $\sum\limits_{i=2}^{n}a_i, \prod\limits_{i=1}^{n}a_i$
 
 $\int_1^5 x\mathrm{d}x$
 
+如果像让积分符号更加好看，就在前面加上\displaystyle，如
+
+$\displaystyle\int_1^5f(x)\text{d}x$
+
 积分符号的上下记号，用limits套：
 
-$\int\limits_{L}(x+y)\mathrm{d}s$
+$\displaystyle\int\limits_{L}(x+y)\mathrm{d}s$
