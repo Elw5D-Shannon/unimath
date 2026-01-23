@@ -26,3 +26,5 @@ $\displaystyle\int_1^5f(x)\text{d}x$
 积分符号的上下记号，用limits套：
 
 $\displaystyle\int\limits_{L}(x+y)\mathrm{d}s$
+
+下划线输入可以这样 $\underline{\qquad}$.
