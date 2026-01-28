@@ -43,7 +43,7 @@ $\color{red} x^2 + \color{blue} y^2 = 1$
 <span style='color:orange; font-weight:bold'>加粗橘色</span>
 
 数学公式中的颜色文字（虽然大概用不到就是了）
-\color{red} x^2 + \color{blue} y^2 = 1
+$\color{red} x^2 + \color{blue} y^2 = 1$
 ```
 
 **章节符号** §
