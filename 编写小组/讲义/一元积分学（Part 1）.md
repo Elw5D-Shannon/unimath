@@ -10,7 +10,40 @@ aliases:
 %%
 # Section 1  积分基础
 
->[!bug] 待补充
+数学是对抽象概念的演绎，有概念我们就得讲定义。所以先上不定积分与定积分的定义。
+
+>[!info] 定义$\qquad$原函数与不定积分
+>对一个定义在区间 $I$ 上的函数 $f(x)$，如果存在一个可导函数 $F(x)$，使得$$F'(x)=f(x),$$则称 $F(x)$ 是 $f(x)$ 的一个原函数。 $f(x)$ 的原函数全体称为其不定积分，记作$$\int f(x)\text dx=F(x)+C,$$其中 $C$ 是常数。
+
+按照这个定义，$f(x)$ 后面的 $\text dx$ 似乎是不必要的——但显然实际上不是。大家有兴趣可以自己去查资料，我们的时间都比较有限，就不展开了。自己有好奇心去探索才是学习的一个最大动力……
+
+言归正传，接下来是定积分的定义。
+>[!info] 定义$\qquad$定积分
+>设 $f(x)$ 在区间 $[a,b]$ 上有定义，取一列数 $x_i(i=0,1,\cdots,n)$，满足 $a=x_0\lt x_1\lt x_2 \lt \cdots\lt x_n=b$，记 $\lambda=\min\limits_{0\leqslant i\lt n}(x_{i+1}-x_i),$ 如果对任意$\xi_i\in[x_i,x_{i+1}],0\leqslant i\lt n$，极限 $\displaystyle\lim_{\lambda\to0}\sum_{i=0}^{n-1}f(\xi_i)(x_{i+1}-x_i)$ 存在，则称函数 $f(x)$ 在区间 $[a,b]$ 上可积，记为$$\int_a^bf(x)\text dx=\lim_{\lambda\to0}\sum_{i=0}^{n-1}f(\xi_i)(x_{i+1}-x_i),$$
+>其结果称为定积分。
+<br>
+
+然后是连接不定积分与定积分桥梁：牛顿-莱布尼兹公式
+
+>[!info] 牛顿-莱布尼兹公式
+>设 $f(x)$ 在区间 $[a,b]$ 上可积，且有一个原函数 $F(x)$ ，则$$\int_a^bf(x)\text dx=F(b)-F(a).$$
+
+使用这个定理是有条件的。因为 $F(x)$ 是 $f(x)$ 的一个原函数，所以它必须可导，从而必须<span class="emphasize">连续</span>。
+有了这个定理，我们就可以比较方便地计算定积分了——至少比用定义方便。并且，这也让我们有了求不定积分的动力。所以，接下来是一些常用的基本不定积分公式（更详尽的在最下面）：
+
+$\displaystyle\int 0 \, dx =C$
+$\displaystyle\int k \, dx = kx + C$ （ $k$  为常数）
+$\displaystyle\int x^\mu \, dx = \frac{x^{\mu+1}}{\mu+1} + C$ （ $\mu \neq -1$ ）
+$\displaystyle\int \frac{1}{x} \, dx = \ln|x| + C$ 
+$\displaystyle\int a^x \, dx = \frac{a^x}{\ln a} + C$ （ $a>0,a\neq1$ ）
+$\displaystyle\int e^x \, dx = e^x + C$ 
+$\displaystyle\int \sin x \, dx = -\cos x + C$ 
+$\displaystyle\int \cos x \, dx = \sin x + C$ 
+$\displaystyle\int \tan x \, dx = -\ln|\cos x| + C$
+$\displaystyle\int \cot x \, dx = \ln|\sin x| + C$
+$\displaystyle\int \sec x \, dx = \ln|\sec x + \tan x| + C$ 
+$\displaystyle\int \csc x \, dx = \ln|\csc x - \cot x| + C$ 
+（这一列撬棍是不是特别喜感哈哈哈哈）
 # Section 2  积分方法
 ## 预处理
 拿到一个积分，最忌讳的是直接被那一团复杂的被积函数吓倒。先尝试着逐步拆解简化这个积分，然后进行求解。
@@ -518,20 +551,9 @@ $$
 >
 >除了有界性，证明方法和上面如出一辙！所以第一问不要求大家完全掌握，了解为主；但第二问的解2需要掌握，这是利用定积分定义的经典题目。
 # Extra. 常用积分公式速记
-### 一、基本初等函数积分
- $\displaystyle\int 0 \, dx =C$
- $\displaystyle\int k \, dx = kx + C$ （ k  为常数）
- $\displaystyle\int x^\mu \, dx = \frac{x^{\mu+1}}{\mu+1} + C$ （ $\mu \neq -1$ ）
- $\displaystyle\int \frac{1}{x} \, dx = \ln|x| + C$ 
-$\displaystyle\int a^x \, dx = \frac{a^x}{\ln a} + C$ （ $a>0,a\neq1$ ）
- $\displaystyle\int e^x \, dx = e^x + C$ 
+ 
 ### 二、三角函数积分
- $\displaystyle\int \sin x \, dx = -\cos x + C$ 
- $\displaystyle\int \cos x \, dx = \sin x + C$ 
- $\displaystyle\int \tan x \, dx = -\ln|\cos x| + C$
- $\displaystyle\int \cot x \, dx = \ln|\sin x| + C$
- $\displaystyle\int \sec x \, dx = \ln|\sec x + \tan x| + C$ 
- $\displaystyle\int \csc x \, dx = \ln|\csc x - \cot x| + C$ 
+ 
  $\displaystyle\int \sec^2 x \, dx = \tan x + C$ 
  $\displaystyle\int \csc^2 x \, dx = -\cot x + C$ 
  $\displaystyle\int \sec x \tan x \, dx = \sec x + C$ 
