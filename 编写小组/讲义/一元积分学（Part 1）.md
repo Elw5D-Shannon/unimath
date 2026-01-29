@@ -97,7 +97,7 @@ ${\sqrt{x^2 - a^2}}$ 可令 $x = a\sec t$
 
 >[!done] 你可以结合 $\sin^2x+\cos^2x=1$ 和 $\tan^2x+1=\sec^2x$ 来辅助记忆，并强化运用能力
 
->[!example] 例题2.
+>[!example] 例题2.2
 >求不定积分 $\displaystyle\int\frac{\mathrm dx}{\sqrt{x^2+a^2}} \quad (a>0)$
 
 >[!note] 解析
@@ -105,22 +105,53 @@ ${\sqrt{x^2 - a^2}}$ 可令 $x = a\sec t$
 $\sqrt{x^2+a^2} = \sqrt{a^2\tan^2 t + a^2} = a\sec t$
 >$\begin{align}\int \frac{dx}{\sqrt{x^2+a^2}} &= \int \frac{a\sec^2 t dt}{a\sec t} \\&= \int \sec t dt \\&= \ln|\sec t + \tan t| + C_1 \\&= \ln\left|\frac{\sqrt{x^2+a^2}}{a} + \frac{x}{a}\right| + C_1 \\&= \ln\left|x + \sqrt{x^2+a^2}\right| + C\end{align}$
 #### 3. 有理式
->[!example] 例2.
+>[!example] 例2.3
 >求不定积分 $\displaystyle\int\dfrac{x\mathrm dx}{(x-1)^{100}}$.
 
 >[!note] 解析
 >$\begin{align}\text{原式}&=\int\frac{(x-1)+1}{(x-1)^{100}}\mathrm d(x-1)\\&=\int\frac{\mathrm d(x-1)}{(x-1)^{99}}+\int\frac{\mathrm d(x-1)}{(x-1)^{100}}\\&=-\frac{1}{98(x-1)^{98}} - \frac{1}{99(x-1)^{99}} + C\end{align}$
 
->[!tip] !!!
->（等待添加，有什么想法吗？）
+>[!example] 例2.4
+>设 $\displaystyle a_n=\int_0^1x(1-x)^n\text dx,n=1,2,\cdots$.
+>（1）求级数 $\displaystyle\sum_{n=1}^\infty a_n$；
+>（2）设常数 $\lambda\gt0$，试讨论级数 $\displaystyle\sum_{n=1}^\infty \lambda^na_n$ 的敛散性.
+
+>[!note] 解析
+>（1）**解1：**$$\begin{aligned}
+>a_n&=-\int_0^1x(1-x)^n\text d(1-x)\\
+>&=-\frac{1}{n+1}\int_0^1x\text d(1-x)^{n+1}\\
+>&=-\frac{1}{n+1}\left([x(1-x)^{n+1}]_0^1-\int_0^1(1-x)^{n+1}\text dx\right)\\
+>&=-\frac{1}{n+1}\int_0^1(1-x)^{n+1}\text d(1-x)\\
+>&=-\frac{1}{n+1}\left[\frac{(1-x)^{n+2}}{n+2}\right]_0^1\\
+>&=\frac{1}{(n+1)(n+2)}\\
+>&=\frac{1}{n+1}-\frac{1}{n+2}.
+>\end{aligned}$$
+>于是$$\sum_{k=1}^n a_k = \sum_{k=1}^n \left( \frac{1}{k+1} - \frac{1}{k+2} \right) = \frac{1}{2} - \frac{1}{n+2}.$$
+>因此$$\sum_{n=1}^\infty a_n = \lim_{n \to \infty} \left( \frac{1}{2} - \frac{1}{n+2} \right) = \frac{1}{2}.$$
+>**解2：** 令 $t=1-x$，则
+>$$\begin{aligned}
+a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
+&= \int_0^1 (t^n - t^{n+1}) \, dt = \left[ \frac{t^{n+1}}{n+1} - \frac{t^{n+2}}{n+2} \right]_0^1 \\
+&= \frac{1}{n+1} - \frac{1}{n+2}.
+>\end{aligned}$$
+>后同解1
+>（2）设 $\displaystyle b_n = \lambda^n a_n = \lambda^n \left( \frac{1}{n+1} - \frac{1}{n+2} \right)$。考虑比值判别法：$$\lim_{n \to \infty} \frac{b_{n+1}}{b_n} = \lim_{n \to \infty} \frac{\lambda^{n+1} \left( \frac{1}{n+2} - \frac{1}{n+3} \right)}{\lambda^n \left( \frac{1}{n+1} - \frac{1}{n+2} \right)} = \lambda \lim_{n \to \infty} \frac{ \frac{1}{(n+2)(n+3)} }{ \frac{1}{(n+1)(n+2)} } = \lambda \lim_{n \to \infty} \frac{n+1}{n+3} = \lambda.$$
+>故当 $0 < \lambda < 1$ 时，级数收敛；当 $\lambda > 1$ 时，级数发散。
+当 $\lambda = 1$ 时，$\displaystyle b_n = \frac{1}{n+1} - \frac{1}{n+2}$，由 (1) 知级数收敛。
+综上，当 $0 < \lambda \le 1$ 时，级数 $\displaystyle \sum_{n=1}^\infty \lambda^n a_n$ 收敛；当 $\lambda > 1$ 时，级数发散.
+
+>[!summary] 题后总结
+>以上两题很像，就放在一起总结了。
+>2.4第一问解1是利用凑微分法和分部积分法，比较常规，也相对容易想到；解2利用第二类换元法，2.3在微分中凑出一个较为复杂的表达式，可以理解为令 $t=x-1$ 的换元，都大大简化了计算。
+>为什么用这种换元可以简化计算呢？观察一下特征：一个相对复杂的式子上有一个 $n$ 次方，变得更加复杂，而简单的式子 $x$ 是一次的，更加简单。为了<span style='color: #ff7700; font-weight: bold'>“调和”</span>两个式子的复杂度，我们把复杂式子代换掉，这样就能更加方便地进行积分了。
 
 >[!example] 例2.
 >求不定积分 $\displaystyle\int \frac{\mathrm{d}x}{\sqrt[6]{x+1} - \sqrt[3]{x+1}}$
 
 >[!hint] 提示
 >对于含有多个次数不同的根式时，换元时要换元为根指数的最小公倍数。
->若被积函数中含有 $\sqrt[n_1]{ax+b}$,$\sqrt[n_2]{ax+b}$,$\dots$,$\sqrt[n_k]{ax+b}$，可考虑代换 $t = \sqrt[n]{ax+b}$（n 为 $n_1$,$n_2$,$\dots,n_k$ 的最小公倍数）
->若被积函数中含有 $\sqrt[n_1]{\frac{ax+b}{cx+d}}$,$\sqrt[n_2]{\frac{ax+b}{cx+d}}$,$\dots$,$\sqrt[n_k]{\frac{ax+b}{cx+d}}$，可考虑代换 $t = \sqrt[n]{\frac{ax+b}{cx+d}}$（n 为 $n_1$,$n_2$,$\dots$,$n_k$ 的最小公倍数）
+>若被积函数中含有 $\sqrt[n_1]{ax+b}$,$\sqrt[n_2]{ax+b}$,$\dots$,$\sqrt[n_k]{ax+b}$，可考虑代换 $t = \sqrt[n]{ax+b}$（$n$ 为 $n_1$,$n_2$,$\dots,n_k$ 的最小公倍数）
+>若被积函数中含有 $\sqrt[n_1]{\frac{ax+b}{cx+d}}$,$\sqrt[n_2]{\frac{ax+b}{cx+d}}$,$\dots$,$\sqrt[n_k]{\frac{ax+b}{cx+d}}$，可考虑代换 $t = \sqrt[n]{\frac{ax+b}{cx+d}}$（$n$ 为 $n_1$,$n_2$,$\dots$,$n_k$ 的最小公倍数）
 
 >[!note] 解析
 >令 $t=\sqrt[6]{x+1}$，则 $x=t^6-1$，$\mathrm dx=6t^5\mathrm dt$，则 
@@ -137,7 +168,8 @@ $\sqrt{x^2+a^2} = \sqrt{a^2\tan^2 t + a^2} = a\sec t$
 #### 4. 倒代换
 在拆解有理式的时候，对于 $\dfrac{1}{ax+b},\dfrac{1}{ax^2+bx+c}$ 等一次、二次分式，我们可以从容应对；但是如果次数再高一点，就很难办了。
 然而，对于一些较为简单的高次幂函数，我们可以使用**倒代换**：把 $x$ 倒过来！
-令 $x=\frac1t,\mathrm dx=-\frac{1}{t^2}\mathrm dt$
+令 $\displaystyle x=\frac1t,\mathrm dx=-\frac{1}{t^2}\mathrm dt.$
+
 >[!example] 例题
 >求不定积分 $\displaystyle\int\frac{1}{x(x^7+2)}\mathrm dx$
 
