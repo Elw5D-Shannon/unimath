@@ -300,6 +300,21 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 
 上面两种类型并没有穷尽所有的可能，只是抛砖引玉，实际可能的变形是有很多的。
 <br>
+先来一道简单的题目热热身。
+>[!example] 已知 
+>$$\displaystyle\begin{cases} 
+>x = \int_{0}^{t} \frac{\sin u}{u} \text du, \\ 
+>y = \int_{0}^{t} \sin u^2 \text du, 
+>\end{cases}$$ 
+>求$\dfrac{\text dy}{\text dx}$和$\dfrac{\text d^2 y}{\text dx^2}$。 
+
+>[!note] 解析
+>$x$ 和 $y$ 分别对 $t$ 求导得$$\frac{\text dx}{\text dt}=\frac{\sin t}{t},\frac{\text dy}{\text dt}=\sin t^2.$$
+>故 $$\frac{\text dy}{\text dx}=\frac{\text dy}{\text dt}\bigg/\frac{\text dx}{\text dt}=t\sin t.$$
+>$$\frac{\text d^2y}{\text dx^2}=\frac{\text d}{\text dt}\left(\frac{\text dy}{\text dx}\right)\bigg/\frac{\text dx}{\text dt}=\frac{\sin t+t\cos t}{\sin t^2}.$$
+
+积分的题目往往比较地综合，会和其他的知识点一起考察，比如……级数。
+
 >[!example] 例题
 >已知函数 $$f_n(x)=\int_0^xt^2(1-t)\sin^{2n}t\text dt,\qquad x\in(-\infty,+\infty),$$其中 $n$ 为正整数。
 >（1）证明：对任意正整数 $n$，函数 $f_n(x)$ 在 $x=1$ 处取得最大值；
