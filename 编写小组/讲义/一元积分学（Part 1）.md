@@ -318,13 +318,10 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 2. 类似 $\displaystyle\int_a^xf(x+t)\text dt$ 的形式，可以进行换元，令 $u=x+t$，则 $\text dt=\text du$，所以 $\displaystyle\int_a^xf(x+t)\text dt=\int_{x+a}^{2x}f(u)\text du.$
 
 上面两种类型并没有穷尽所有的可能，只是抛砖引玉，实际可能的变形是有很多的。
-<br>
 先来一道简单的题目热热身。
->[!example] 已知 
->$$\displaystyle\begin{cases} 
->x = \int_{0}^{t} \frac{\sin u}{u} \text du, \\ 
->y = \int_{0}^{t} \sin u^2 \text du, 
->\end{cases}$$ 
+>[!example] 例题
+>已知 
+>$\displaystyle\begin{cases} x = \int_{0}^{t} \frac{\sin u}{u} \text du, \\ y = \int_{0}^{t} \sin u^2 \text du, \end{cases}$
 >求$\dfrac{\text dy}{\text dx}$和$\dfrac{\text d^2 y}{\text dx^2}$。 
 
 >[!note] 解析
@@ -392,7 +389,7 @@ $$于是$$\begin{aligned}
 >第一问需要用到两个东西：（1）换元，把函数里的 $x$ 拿到函数外面来；（2）<span style='color: orange'>定积分的值与被积变量无关</span>。第二点很容易被忘记。
 >第二问的两种解法都是有来头的。
 >解法1源自分部积分法，如果你尝试对需要求的定积分进行分部积分法，然后再用第一问的结论带进去，就会发现 $\displaystyle\int_0^1\text e^xf(x)\text dx$ 这一项被消掉了，这时如果你相对敏锐一点就会想到——这一项在不定积分中也会被消掉！这样我们就可以直接求出 $f(x)$ 的表达式了，再求定积分自然不在话下。剩下要注意就是<span style='color: orange' >不要忘记积分常数</span>。
->解法2的思路类似于微分中值定理的题。我们看第一问的结论 $f'(x) + f(x) = 6x$，是不是很像微分中值定理中我们要凑的 $(\text e^xf(x))'$？这样就产生了第二种思路。后面的过程中仍然要注意<span style='color: orange' >不要忘记积分常数</span>。
+>解法2的思路类似于微分中值定理的题。我们看第一问的结论 $f'(x) + f(x) = 6x$，是不是很像微分中值定理中我们要凑的 $(\text e^xf(x))'$？这样就产生了第二种思路。后面的过程中仍然要注意<span class="emphasize">不要忘记积分常数</span>。
 
 # Section 5  与积分相关的不等式证明
 
