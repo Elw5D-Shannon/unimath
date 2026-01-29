@@ -212,9 +212,20 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 >[!note] 解析
 >我们可以提前代换变量，将根式消去。
 >令 $t=\sqrt{x}$，则 $t^2=x,\ 2t\mathrm dt=\mathrm dx$，这样就能将根式化为整式。
->$\displaystyle\int\mathrm e^\sqrt{x}\mathrm dx=2\int t\mathrm e^t\mathrm dt$
->取 $u=x$：
->$\begin{align}\text{原式}&=2\int t\mathrm d\mathrm e^t\\&=2t\mathrm e^t-2\int\mathrm e^t\mathrm dt\\&=2t\mathrm e^t-2\mathrm e^t+C\\&=2\mathrm e^\sqrt x(\sqrt x-1)+C\end{align}$
+>$$\begin{align}\text{原式}&=2\int t\mathrm e^t\mathrm dt\\&=2\int t\mathrm d\mathrm e^t\\&=2t\mathrm e^t-2\int\mathrm e^t\mathrm dt\\&=2t\mathrm e^t-2\mathrm e^t+C\\&=2\mathrm e^\sqrt x(\sqrt x-1)+C\end{align}$$
+
+>[!example] 例题
+>求 $\displaystyle I=\int\dfrac{\text e^{\arctan x}}{(1+x^2)^{3/2}}\text dx.$
+
+>[!note] 解析
+>令 $u=\arctan x$, 则 $\text dx=\sec^2u\text du.$ 则 $$\begin{aligned}
+>\displaystyle I&=\int \text e^u\cos u\text du\\
+>&=\int \text e^u\text d\sin u\\
+>&=\text e^u\sin u-\int\text e^u\sin u\text du\\
+>&=\text e^u\sin u+\int \text e^u\text d\cos u\\
+>&=\text e^u\sin u+(\text e^u\cos u-\int\text e^u\cos u\text du)\\
+>&=\text e^u\sin u+\text e^u\cos u-I
+>\end{aligned},$$于是 $\displaystyle I=\dfrac{1}{2}\text e^u(\sin u+\cos u)=\dfrac{(x+1)\text e^{\arctan x}}{2\sqrt{x^2+1}}+C.$
 
 >[!bug] TODO: 待补充 种类
 
@@ -272,7 +283,82 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 
 >[!note] 解析
 >解：TO BE CONTINUED
+
 # Section 4  变限积分
+
+变限积分的意思就是这个积分的上/下限是变量。它最重要的性质就是$$\frac{\text d}{\text dx}\left(\int_a^xf(t)\text dt\right)=f(x).$$
+由此有一些推论：
+1. $\displaystyle\frac{\text d}{\text dx}\left(\int^a_xf(t)\text dt\right)=-f(x);$
+2. $\displaystyle\frac{\text d}{\text dx}\left(\int_a^{\varphi(x)}f(t)\text dt\right)=f(\varphi(x))\varphi'(x);$
+3. $\displaystyle\frac{\text d}{\text dx}\left(\int_{\psi(x)}^{\varphi(x)}f(t)\text dt\right)=f(\varphi(x))\varphi'(x)-f(\psi(x))\psi'(x).$
+
+利用牛顿-莱布尼兹公式和复合函数求导法则可以证明这三点。
+变限积分的一个难点就是被积函数里出现 $x$ 时应该怎么处理。一般来说有两个处理办法：
+
+1. 类似 $\displaystyle\int_a^x(t+g(t))f(t)\text dt$ 的形式，可以拆开处理，即 $\displaystyle\int_a^x(x+g(t))f(t)\text dt= x\int_a^xf(t)\text dt+\int_a^xg(t)f(t)\text dt;$
+2. 类似 $\displaystyle\int_a^xf(x+t)\text dt$ 的形式，可以进行换元，令 $u=x+t$，则 $\text dt=\text du$，所以 $\displaystyle\int_a^xf(x+t)\text dt=\int_{x+a}^{2x}f(u)\text du.$
+
+上面两种类型并没有穷尽所有的可能，只是抛砖引玉，实际可能的变形是有很多的。
+<br>
+>[!example] 例题
+>已知函数 $$f_n(x)=\int_0^xt^2(1-t)\sin^{2n}t\text dt,\qquad x\in(-\infty,+\infty),$$其中 $n$ 为正整数。
+>（1）证明：对任意正整数 $n$，函数 $f_n(x)$ 在 $x=1$ 处取得最大值；
+>（2）记 $a_n=f_n(1),n=1,2,\cdots$，试判断级数 $\sum\limits_{n=1}^\infty a_n$ 的敛散性。
+
+>[!note] 解析
+>（1）$f'_n(x)=x^2(1-x)\sin^{2n}x$，令 $f'_n(x)=0$，得 $x=0,1,\pm n\pi(n=1,2,\cdots)$
+>当 $x\lt1$ 时，$x^2\gt0$，$1-x\gt0$，$\sin^{2n}x\gt0$，故 $f'_n(x)\gt0$；当 $x\gt1$ 时，$x^2\gt0$，$1-x\lt0$，$\sin^{2n}x\gt0$，故 $f'_n(x)\lt0$。因此 $f_n(x)$ 在 $x=1$ 左侧递增，右侧递减，从而 $x=1$ 为 $f_n(x)$ 的极大值点，也是最大值点。
+>
+>（2）当 $t\in[0,1]$ 时，有 $0\leqslant\sin t\leqslant t$，故$$\begin{aligned}
+>0\leqslant a_n
+>&=\int_0^1t^2(1-t)\sin^{2n}t\text dt\\
+>&\leqslant\int_0^1t^{2n+2}(1-t)\text dt\\
+>&=\frac{t^{2n+3}}{2n+3}\bigg|_0^1-\frac{t^{2n+4}}{2n+4}\bigg|_0^1\\
+>&=\frac{1}{(2n+3)(2n+4)}.
+>\end{aligned}$$
+>又$$\lim_{n\to\infty}\dfrac{(2n+3)(2n+4)}{n^2}=4,$$由比较判别法知 $\displaystyle\sum_{n=1}^\infty\frac{1}{(2n+3)(2n+4)}$ 收敛，故 $\displaystyle \sum_{n=1}^\infty a_n$ 收敛。
+
+>[!example] 例题
+>已知函数 $f(x)$ 在 $(-\infty, +\infty)$ 内连续，且
+$$\int_0^x t f(x-t)  \, \mathrm{d}t = x^3 - \int_0^x f(t)  \, \mathrm{d}t.$$
+(1) 验证：$f'(x) + f(x) = 6x$ 且 $f(0) = 0$；（5 分）
+(2) 计算定积分 $\displaystyle \int_0^1 \text e^x f(x)  \, \mathrm{d}x$。（3 分）
+
+>[!note] 解析
+>（1）令 $u=x-t$，则$$\begin{aligned}
+>-\int_x^0(x-u)f(u)\text du
+>&=x\int_0^xf(u)\text du-\int_0^xuf(u)\text du\\
+>&=x^3-\int_0^xf(t)\text dt\\
+>&=x^3-\int_0^xf(u)\text du
+>\end{aligned},$$
+>两边求导得$$\int_0^xf(u)\text du+xf(x)-xf(x)=\int_0^xf(u)\text du=3x^2-f(x),\qquad(*)$$
+>再求导得$f'(x) + f(x) = 6x.$ 在 $(*)$ 式中令 $x=0$ 得 $f(0)=0.$
+>（2）
+>**解1：** 考虑不定积分 $\displaystyle \int \text e^xf(x)\text dx.$ 用分部积分法得$$\begin{aligned}
+>\int \text e^xf(x)\text dx
+>&=\int f(x)\text d\text e^x\\
+>&=\text e^xf(x)-\int f'(x)\text e^x\text dx\\
+>&=\text e^xf(x)-\int (6x-f(x))\text e^x\text dx\\
+>&=\text e^xf(x)-6(x-1)\text e^x+\int \text e^xf(x)\text dx
+>\end{aligned},$$于是 $\text e^xf(x)=6(x+1)\text e^x+C.$ 由 $f(0)=0$ 知 $C=6,$ 故 $\text e^xf(x)=6(x+1)\text e^x+6.$
+>从而 $\displaystyle \int_0^1\text e^xf(x)\text dx=6(x+2)\text e^x\big|_0^1+6x\big|_0^1=18\text e-6.$
+>
+>**解2：** 令 $g(x) = \text e^x f(x)$，则 $g(0)=0$，且$$g'(x) = \text e^x [f'(x)+f(x)] = 6x \text e^x.$$
+积分得$$g(x) = \int 6x \text e^x  \, \mathrm{d}x = 6(x-1)\text e^x + C.$$
+代入 $g(0)=0$ 得 $0 = 6(0-1) + C$，即 $C=6$，所以$$g(x) = 6(x-1)\text e^x + 6.
+$$于是$$\begin{aligned}
+\int_0^1 \text e^x f(x)  \, \mathrm{d}x 
+&= \int_0^1 \left[ 6(x-1)\text e^x + 6 \right]  \, \mathrm{d}x \\
+&= \left[ 6(x-2)\text e^x + 6x \right]_0^1 \\
+&= ( -6\text e + 6) - (-12) \\
+&= 18 - 6\text e.
+\end{aligned}$$
+
+>[!summary] 题后总结
+>第一问需要用到两个东西：（1）换元，把函数里的 $x$ 拿到函数外面来；（2）<span style='color: orange'>定积分的值与被积变量无关</span>。第二点很容易被忘记。
+>第二问的两种解法都是有来头的。
+>解法1源自分部积分法，如果你尝试对需要求的定积分进行分部积分法，然后再用第一问的结论带进去，就会发现 $\displaystyle\int_0^1\text e^xf(x)\text dx$ 这一项被消掉了，这时如果你相对敏锐一点就会想到——这一项在不定积分中也会被消掉！这样我们就可以直接求出 $f(x)$ 的表达式了，再求定积分自然不在话下。剩下要注意就是<span style='color: orange' >不要忘记积分常数</span>。
+>解法2的思路类似于微分中值定理的题。我们看第一问的结论 $f'(x) + f(x) = 6x$，是不是很像微分中值定理中我们要凑的 $(\text e^xf(x))'$？这样就产生了第二种思路。后面的过程中仍然要注意<span style='color: orange' >不要忘记积分常数</span>。
 
 # Section 5  与积分相关的不等式证明
 ## Extra. 常用积分公式速记
