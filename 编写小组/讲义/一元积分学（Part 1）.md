@@ -605,7 +605,7 @@ $$
 >[!bug] 请补充其他容易犯错的点
 # Extra. 常用积分公式速记
  
-### 一、三角函数积分
+### 一、其他三角函数积分
  
  $\displaystyle\int \sec^2 x \, dx = \tan x + C$ 
  $\displaystyle\int \csc^2 x \, dx = -\cot x + C$ 
