@@ -570,13 +570,42 @@ $$
 >
 >除了有界性，证明方法和上面如出一辙！所以第一问不要求大家完全掌握，了解为主；但第二问的解2需要掌握，这是利用定积分定义的经典题目。
 
+%%不知道该放在哪的题
+另外，此题解析等所有说明都不要删除，保留一种探索感%%
+
+>[!example] 例题
+>已知函数 $f(x), g(x)$ 在闭区间 $[a, b]$ 上连续，且 $f(x) > 0$，则极限 $\displaystyle \lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx$ 的值为$\underline{\qquad}.$
+
+>[!faq] 这是正解吗？
+>由于 $f(x)$ 在 $[a,b]$ 上连续，由最值定理，存在 $m,M>0$，使得 $m\leqslant f(x)\leqslant M,$ 故$$\sqrt[n]{m} \int_a^b g(x)\mathrm dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx \leqslant \sqrt[n]{M} \int_a^b g(x)\mathrm dx.$$又有 $\displaystyle \lim_{n \to \infty} \sqrt[n]{m} = \lim_{n \to \infty} \sqrt[n]{M} = 1$，所以由夹逼定理知$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx = \int_a^b g(x)\mathrm dx.$$
+
+>[!summary] 题后总结
+>这道题很妙，妙在想到用夹逼定理。但是这是怎么想到的呢？
+>我们观察一下极限的形式：有一个开 $n$ 次根号。这会让我们想到这样一个极限：$$\lim_{n\to\infty}\sqrt[n]a=1,a\gt0.$$从而可以用放缩和夹逼定理做出这道题……吗？
+>不对，我们再看一下这个不等式：$$\sqrt[n]{m} \int_a^b g(x)\mathrm dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx \leqslant \sqrt[n]{M} \int_a^b g(x)\mathrm dx,$$它真的成立吗？并不，题中没有给出 $g(x)\gt0$ 的条件，甚至连 $g(x)$ 保持同号的条件都没有，所以并不成立。那么应该怎么做呢？下面给出一种思路。
+
+>[!done] 正解 
+>仍然利用 $f(x)$ 的最值和这个极限 $\lim\limits_{n\to\infty}\sqrt[n]a=1,a\gt0.$ 
+>考虑差$\displaystyle\int_a^bg(x)\sqrt[n]{f(x)}\text dx-\int_a^bg(x)\text dx=\int_a^bg(x)(\sqrt[n]{f(x)}-1)\text dx.$
+>由于我们不清楚 $g(x)$ 的符号，所以考虑绝对值 $$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx.$$由于 $g(x)$ 在 $[a,b]$ 上连续，所以它必定有界，即存在正数 $G\gt0$，使得 $|g(x)|\leqslant G,$ 故$$0\leqslant\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx\leqslant G\int_a^b|\sqrt[n]{f(x)}-1|\text dx.$$由于 $\displaystyle\sqrt[n]m-1\leqslant \sqrt[n]{f(x)}-1\leqslant\sqrt[n]M-1,$ 所以 $\displaystyle\lim_{n\to\infty}\sqrt[n]{f(x)}-1=0,$ 从而 $\displaystyle\lim_{n\to\infty}|\sqrt[n]{f(x)}-1|=0,$ 故$$\displaystyle\lim_{n\to\infty}\int_a^bG|\sqrt[n]{f(x)}-1|=0\qquad(*),$$由夹逼定理知$$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx=0,$$故$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx = \int_a^b g(x)\mathrm dx.$$
+
+>[!summary] 题后总结
+>上述方法是怎么想到的呢？其实，我先用画图软件大致确定了答案应该是 $\displaystyle\int_a^bg(x)\text dx,$ 然后想：不知道符号的处理办法应该是加绝对值。但是加绝对值会有这样一个问题：$\displaystyle\lim f(x)=a\Rightarrow \lim |f(x)|=|a|,$ 但 $\displaystyle\lim |f(x)|=|a|\nRightarrow \lim f(x)=a$。但有一种特殊情况：<span style='color: blue'>如果</span> $\color{blue}a=0,$ <span style='color: blue'>那么反过来也是成立的</span>。所以可以考虑被积函数和结果式子的差，这样就可以让极限值为 $0$，从而可以得出结论了。
+>其实上面的证明还有点小瑕疵，就是 $(*)$ 处。里面的极限等于零真的可以推出积分的极限等于零吗？确实是可以的，但这是有条件的。我们先给出这道题可以这么做的证明，再说条件是什么。
+>>[!note] 补充证明
+>>由于 $f(x)$ 是连续的，所以 $\sqrt[n]{f(x)}-1$ 也是连续的，从而由积分中值定理可知，存在 $\xi\in(a,b),$ 使得 $\displaystyle \int_a^b\sqrt[n]{f(x)}-1\text dx=\sqrt[n]{f(\xi)}-1\to0\,(n\to\infty).$ 
+>
+>实际上，只有函数“一致连续”才能得出极限和积分号可以互换的结论；就上面这道题而言，就是我们可以先求 $\lim\limits_{n\to\infty}(\sqrt[n]f(x)-1)$ 再求这个积分。有兴趣的可以自行去了解一致连续是什么意思。
+>有趣的是，这道题的第一个解析是原卷的解析，也就是说，出卷老师也没有意识到这个地方不能用夹逼定理。大家不能忘记夹逼定理的方法，但是也要注意具体情形下到底能不能用夹逼定理，<span style='color: blue'>这个不等式究竟是否成立</span>。
+
 定积分的大坑主要是换元时要换上下限。
 >[!warning] 注意！
 >单纯把 $f'(x)\mathrm dx$ 换成 $\mathrm df(x)$ 不需要改变上下限，因为后者也是在对 $x$ 求积分，此时上下限仍然针对 $x$；当你使用<span class="danger">全新的变量</span>，如令 $t=f(x)$，且你决定设置 $t$ 为新积分变量而非单纯的关于 $x$ 的函数时，你必须更换成新的上下限。
 
+>[!bug] 请补充其他容易犯错的点
 # Extra. 常用积分公式速记
  
-### 二、三角函数积分
+### 一、三角函数积分
  
  $\displaystyle\int \sec^2 x \, dx = \tan x + C$ 
  $\displaystyle\int \csc^2 x \, dx = -\cot x + C$ 
@@ -584,28 +613,28 @@ $$
  $\displaystyle\int \csc x \cot x \, dx = -\csc x + C$ 
  $\displaystyle\int \sin^2 x \, dx = \frac{x}{2} - \frac{\sin 2x}{4} + C$ 
  $\displaystyle\int \cos^2 x \, dx = \frac{x}{2} + \frac{\sin 2x}{4} + C$ 
-### 三、反三角函数积分
+### 二、反三角函数积分
  $\displaystyle\int \arcsin x \, dx = x\arcsin x + \sqrt{1-x^2} + C$ 
  $\displaystyle\int \arccos x \, dx = x\arccos x - \sqrt{1-x^2} + C$ 
  $\displaystyle\int \arctan x \, dx = x\arctan x - \frac{1}{2}\ln(1+x^2) + C$ 
  $\displaystyle\int \text{arccot } x \, dx = x\text{arccot } x + \frac{1}{2}\ln(1+x^2) + C$ 
-### 四、含根式的积分（ a>0 ）
+### 三、含根式的积分（ a>0 ）
  $\displaystyle\int \frac{1}{\sqrt{a^2 - x^2}} \, dx = \arcsin\frac{x}{a} + C$ 
  $\displaystyle\int \frac{1}{\sqrt{x^2 + a^2}} \, dx = \ln\left(x + \sqrt{x^2 + a^2}\right) + C$ 
  $\displaystyle\int \frac{1}{\sqrt{x^2 - a^2}} \, dx = \ln\left|x + \sqrt{x^2 - a^2}\right| + C$ 
  $\displaystyle\int \sqrt{a^2 - x^2} \, dx = \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\arcsin\frac{x}{a} + C$ 
  $\displaystyle\int \sqrt{x^2 + a^2} \, dx = \frac{x}{2}\sqrt{x^2 + a^2} + \frac{a^2}{2}\ln\left(x + \sqrt{x^2 + a^2}\right) + C$ 
  $\displaystyle\int \sqrt{x^2 - a^2} \, dx = \frac{x}{2}\sqrt{x^2 - a^2} - \frac{a^2}{2}\ln\left|x + \sqrt{x^2 - a^2}\right| + C$ 
-### 五、含分式的积分（ $a\neq0$ ）
+### 四、含分式的积分（ $a\neq0$ ）
  $\displaystyle\int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a}\arctan\frac{x}{a} + C$ 
  $\displaystyle\int \frac{1}{x^2 - a^2} \, dx = \frac{1}{2a}\ln\left|\frac{x - a}{x + a}\right| + C$ 
  $\displaystyle\int \frac{1}{ax + b} \, dx = \frac{1}{a}\ln|ax + b| + C$ 
-### 六、指数与对数结合积分
+### 五、指数与对数结合积分
  $\displaystyle\int x e^x \, dx = (x-1)e^x + C$ 
 $\displaystyle\int x \ln x \, dx = \frac{x^2}{2}\ln x - \frac{x^2}{4} + C$ 
  $\displaystyle\int e^x \sin x \, dx = \frac{e^x}{2}(\sin x - \cos x) + C$ 
  $\displaystyle\int e^x \cos x \, dx = \frac{e^x}{2}(\sin x + \cos x) + C$ 
-### 七、常用凑微分积分
+### 六、常用凑微分积分
  $\displaystyle\int \frac{1}{\sqrt{1 - x^2}} \, dx = \arcsin x + C = -\arccos x + C$ 
  $\displaystyle\int \frac{1}{1 + x^2} \, dx = \arctan x + C = -\text{arccot } x + C$ 
  $\displaystyle\int \frac{1}{x\ln x} \, dx = \ln|\ln x| + C$ 
@@ -635,34 +664,5 @@ Trivia: 魔法六边形
 	<text x="-147.3" y="-407.8" transform="scale(1.00188,0.998123)" style="font-family:Arial; font-size:42.7px; fill:black; stroke:white;">1</text>
 </g>
 </svg>
-
-%%不知道该放在哪的题
-另外，此题解析等所有说明都不要删除，保留一种探索感%%
-
->[!todo] 示例
->已知函数 $f(x), g(x)$ 在闭区间 $[a, b]$ 上连续，且 $f(x) > 0$，则极限 $\displaystyle \lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx$ 的值为$\underline{\qquad}.$
-
->[!fail] 错解
->由于 $f(x)$ 在 $[a,b]$ 上连续，由最值定理，存在 $m,M>0$，使得 $m\leqslant f(x)\leqslant M,$ 故$$\sqrt[n]{m} \int_a^b g(x)\mathrm dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx \leqslant \sqrt[n]{M} \int_a^b g(x)\mathrm dx.$$又有 $\displaystyle \lim_{n \to \infty} \sqrt[n]{m} = \lim_{n \to \infty} \sqrt[n]{M} = 1$，所以由夹逼定理知$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx = \int_a^b g(x)\mathrm dx.$$
-
->[!summary] 题后总结
->这道题很妙，妙在想到用夹逼定理。但是这是怎么想到的呢？
->我们观察一下极限的形式：有一个开 $n$ 次根号。这会让我们想到这样一个极限：$$\lim_{n\to\infty}\sqrt[n]a=1,a\gt0.$$从而可以用放缩和夹逼定理做出这道题……吗？
->不对，我们再看一下这个不等式：$$\sqrt[n]{m} \int_a^b g(x)\mathrm dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx \leqslant \sqrt[n]{M} \int_a^b g(x)\mathrm dx,$$它真的成立吗？并不，题中没有给出 $g(x)\gt0$ 的条件，甚至连 $g(x)$ 保持同号的条件都没有，所以并不成立。那么应该怎么做呢？下面给出一种思路。
-
->[!done] 正解 
->仍然利用 $f(x)$ 的最值和这个极限 $\lim\limits_{n\to\infty}\sqrt[n]a=1,a\gt0.$ 
->考虑差$\displaystyle\int_a^bg(x)\sqrt[n]{f(x)}\text dx-\int_a^bg(x)\text dx=\int_a^bg(x)(\sqrt[n]{f(x)}-1)\text dx.$
->由于我们不清楚 $g(x)$ 的符号，所以考虑绝对值 $$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx.$$由于 $g(x)$ 在 $[a,b]$ 上连续，所以它必定有界，即存在正数 $G\gt0$，使得 $|g(x)|\leqslant G,$ 故$$0\leqslant\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx\leqslant G\int_a^b|\sqrt[n]{f(x)}-1|\text dx.$$由于 $\displaystyle\sqrt[n]m-1\leqslant \sqrt[n]{f(x)}-1\leqslant\sqrt[n]M-1,$ 所以 $\displaystyle\lim_{n\to\infty}\sqrt[n]{f(x)}-1=0,$ 从而 $\displaystyle\lim_{n\to\infty}|\sqrt[n]{f(x)}-1|=0,$ 故$$\displaystyle\lim_{n\to\infty}\int_a^bG|\sqrt[n]{f(x)}-1|=0\qquad(*),$$由夹逼定理知$$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx=0,$$故$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx = \int_a^b g(x)\mathrm dx.$$
-
->[!summary] 题后总结
->上述方法是怎么想到的呢？其实，我先用画图软件大致确定了答案应该是 $\displaystyle\int_a^bg(x)\text dx,$ 然后想：不知道符号的处理办法应该是加绝对值。但是加绝对值会有这样一个问题：$\displaystyle\lim f(x)=a\Rightarrow \lim |f(x)|=|a|,$ 但 $\displaystyle\lim |f(x)|=|a|\nRightarrow \lim f(x)=a$。但有一种特殊情况：<span style='color: blue'>如果</span> $\color{blue}a=0,$ <span style='color: blue'>那么反过来也是成立的</span>。所以可以考虑被积函数和结果式子的差，这样就可以让极限值为 $0$，从而可以得出结论了。
->其实上面的证明还有点小瑕疵，就是 $(*)$ 处。里面的极限等于零真的可以推出积分的极限等于零吗？确实是可以的，但这是有条件的。我们先给出这道题可以这么做的证明，再说条件是什么。
->>[!note] 补充证明
->>由于 $f(x)$ 是连续的，所以 $\sqrt[n]{f(x)}-1$ 也是连续的，从而由积分中值定理可知，存在 $\xi\in(a,b),$ 使得 $\displaystyle \int_a^b\sqrt[n]{f(x)}-1\text dx=\sqrt[n]{f(\xi)}-1\to0\,(n\to\infty).$ 
->
->实际上，只有函数“一致连续”才能得出极限和积分号可以互换的结论；就上面这道题而言，就是我们可以先求 $\lim\limits_{n\to\infty}(\sqrt[n]f(x)-1)$ 再求这个积分。有兴趣的可以自行去了解一致连续是什么意思。
->有趣的是，这道题的第一个解析是原卷的解析，也就是说，出卷老师也没有意识到这个地方不能用夹逼定理。大家不能忘记夹逼定理的方法，但是也要注意具体情形下到底能不能用夹逼定理，<span style='color: blue'>这个不等式究竟是否成立</span>。
-
 
 ![[谏学高数者十思疏]]
