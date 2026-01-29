@@ -2,5 +2,6 @@
 .vs/
 *.pdf
 .vscode/
-.obsidian/
+.obsidian/*
+!.obsidian/snippets/
 /介值定理例题.md
