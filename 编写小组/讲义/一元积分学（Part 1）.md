@@ -14,7 +14,11 @@ aliases:
 常见的预处理方式：
 1. （对定积分：）靠奇函数来消项；通过拆分上下限来简化可能性(?)
 2. （对有理式：）有理式的拆解
+对有理式的拆解，集中在
+
+
 >[!Bug] 待补充
+>而且，我们还得穿插定积分内容
 ## 换元积分法
 常见特征：被积函数有三角函数、 $x^2\pm a^2$ 等元素
 使用换元积分法非常考验你对被积函数的敏感程度，也就是“题感”，方法本身是特别容易理解的，因此我们必须熟练记忆一些初等函数求导公式以及额外补充的一些推出来的求导公式。
@@ -47,7 +51,7 @@ ${\sqrt{x^2 - a^2}}$ 可令 $x = a\sec t$
 
 >[!fail] 不应当死记硬背上面的代换，这样很容易记错
 
->[!done] 你应当结合 $\sin^2x+\cos^2x=1$ 和 $\tan^2x+1=\sec^2x$ 来辅助记忆，并强化运用能力
+>[!done] 你可以结合 $\sin^2x+\cos^2x=1$ 和 $\tan^2x+1=\sec^2x$ 来辅助记忆，并强化运用能力
 
 >[!example] 例题2.
 >求不定积分 $\displaystyle\int\frac{\mathrm dx}{\sqrt{x^2+a^2}} \quad (a>0)$
@@ -158,7 +162,21 @@ $\sqrt{x^2+a^2} = \sqrt{a^2\tan^2 t + a^2} = a\sec t$
 仅供娱乐，切勿当真%%
 
 #### 3. 依靠递推式求解的积分
+与循环式类似，递推式会在使用分部积分时出现和原式类似，但是比原式“**低一级**”的积分式。这种结构一般在积分式含有正整数 $n$ 的时候出现（e.g. $(x^2+a^2)^n$ ）例如：
+>[!todo] 示例
+>求不定积分 $\displaystyle I_n = \int \frac{\mathrm dx}{(x^2 + a^2)^n} \quad (a>0)$
+>我们尝试一次分部积分：
+>$$\begin{align*}I_{n-1} &= \int \frac{dx}{(x^2 + a^2)^{n-1}} = \frac{x}{(x^2 + a^2)^{n-1}} + 2(n-1)\int \frac{x^2}{(x^2 + a^2)^n} dx \\&= \frac{x}{(x^2 + a^2)^{n-1}} + 2(n-1)\int \frac{(x^2 + a^2) - a^2}{(x^2 + a^2)^n} dx \\&= \frac{x}{(x^2 + a^2)^{n-1}} + 2(n-1)(I_{n-1} - a^2 I_n)\end{align*}$$
+>这样积了一遍之后，我们就会发现：这一次积分，我们打通了 $I_n$ 与 $I_{n-1}$ 的桥梁。
+>这样，我们尝试用 $I_{n-1}$ 来表示 $I_n$：
+>$$I_n = \frac{1}{2a^2(n-1)} \left[ \frac{x}{(x^2 + a^2)^{n-1}} + (2n-3)I_{n-1} \right]$$
+>那么 $I_1$ 呢？
+>$$\displaystyle I_1=\int\frac{dx}{x^2 + a^2}$$
+>取 $x=a\tan t$：
+>$$I_1=\int\frac{a\sec^2 t\mathrm dt}{a^2\sec^2 t}=\frac ta+C=\frac1a\arctan\frac xa+C$$
+>TO BE CONTINUED
 
+>[!bug] 这道题求通项似乎是一件很困难的事。
 
 #### 4. 连续分部积分（选学？）
 >[!bug] 需要斟酌该内容是否重要。
@@ -166,13 +184,18 @@ $\sqrt{x^2+a^2} = \sqrt{a^2\tan^2 t + a^2} = a\sec t$
 分部积分法的推广公式就是重复使用分部积分法法则。
 假设函数 $u,v$ 有 $n+1$ 阶连续导数，则：$\int u v^{(n+1)}\mathrm dx = \int u\mathrm d v^{(n)} = u v^{(n)} - \int v^{(n)}\mathrm du = u v^{(n)} - \int u' v^{(n)}\mathrm dx$
 我们还可以继续把 $\int u' v^{(n)}\mathrm dx$ 撕开：$\int u v^{(n+1)} dx = u v^{(n)} - u' v^{(n-1)} + u'' v^{(n-2)} - \dots + (-1)^n u^{(n)} v + (-1)^{n+1} \int u^{(n+1)} v dx$
-如果被积函数的因式之一是多项式，且次数较高的时候，这个公式特别方便。通常来说，取 $u$ 为该多项式。
+如果被积函数的因式之一是多项式，且次数较高的时候，这个公式特别方便。通常来说，取 $u$ 为该多项式，然后逐步求 $v^{(n)},v^{(n-1)},\cdots,v$，再依次乘到一起（注意正负号！）
 >[!todo] 示例
 >$\int (2x^3 + 3x^2 + 4x + 5)\mathrm e^x\mathrm dx$
 >我们可以令 $u=2x^3 + 3x^2 + 4x + 5$，$v=\mathrm e^x$
 >$u' = 6x^2 + 6x + 4,\quad u'' = 12x + 6,\quad u''' = 12$
 >于是$\begin{align*}\int (2x^3 + 3x^2 + 4x + 5) e^x dx &= (2x^3 + 3x^2 + 4x + 5)e^x - (6x^2 + 6x + 4)e^x + (12x + 6)e^x - 12e^x + C \\&= (2x^3 - 3x^2 + 10x - 5)e^x + C\end{align*}$
->
+
+>[!example] 例题
+>求不定积分 $\int \cos x (x^3 + 2x^2 + 3x + 4) dx$
+
+>[!note] 解析
+>解：TO BE CONTINUED
 # Section 4  变限积分
 
 # Section 5  与积分相关的不等式证明
