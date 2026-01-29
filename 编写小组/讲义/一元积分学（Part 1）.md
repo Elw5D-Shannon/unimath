@@ -12,10 +12,54 @@ aliases:
 ## 预处理
 拿到一个积分，最忌讳的是直接被那一团复杂的被积函数吓倒。先尝试着逐步拆解简化这个积分，然后进行求解。
 常见的预处理方式：
-1. （对定积分：）靠奇函数来消项；通过拆分上下限来简化可能性(?)
-2. （对有理式：）有理式的拆解
-对有理式的拆解，集中在
+1. 对定积分：在积分上下限互为相反数时靠奇函数来消项；通过拆分上下限来简化可能性
+2. 对有理式：有理式的拆解
+对有理式的拆解，集中在对分式 $\displaystyle\frac{M(x)}{N(x)} = \frac{a_0x^n+a_1x^{n-1}+\dots+a_{n-1}x+a_n}{b_0x^m+b_1x^{m-1}+\dots+b_{m-1}x+b_m}$ 的拆解中。
+##### 第一步：拆成一个整式+真分式
+$\displaystyle\frac{M(x)}{N(x)}=S(x)+\frac{P(x)}{Q(x)}$，其中 $S(x)$ 为整式，$\displaystyle\frac{P(x)}{Q(x)}$ 为真分式
+整式可以直接分离，单独求积分；
+对于真分式 $\displaystyle\frac{P(x)}{Q(x)} = \frac{a_0x^p+a_1x^{p-1}+\dots+a_{p-1}x+a_p}{b_0x^q+b_1x^{q-1}+\dots+b_{q-1}x+b_q},\quad p<q$
+将分母进行因式分解 $Q(x)=b_0(x-a)^\alpha\cdots(x-b)^\beta(x^2+px+q)^\lambda\cdots(x^2+rx+s)^\mu$
+通常这种一般的因式分解都会比较容易，出题人不会太难为人。
+分母若出现 $(x^2+px+q)^\lambda$ 这种不可约二次式的幂的形式，需要该二次式的判别式 $\Delta = p^2 - 4q < 0$（即在实数范围内不可约）。如果 $\Delta \geq 0$，则它应当继续分解为一次式的乘积 $(x-a)(x-b)$ 或 $(x-a)^2$ ，而不会保留为这种二次形式。
 
+这样，我们就能把 $\frac{P(x)}{Q(x)}$ 写成： $$\begin{align*}
+\frac{P(x)}{Q(x)} &= \frac{A_1}{x-a} + \frac{A_2}{(x-a)^2} + \dots + \frac{A_\alpha}{(x-a)^\alpha} + \dots + \frac{B_1}{x-b} + \frac{B_2}{(x-b)^2} + \dots + \frac{B_\beta}{(x-b)^\beta} \\
+&\quad + \frac{M_1x+N_1}{x^2+px+q} + \frac{M_2x+N_2}{(x^2+px+q)^2} + \dots + \frac{M_\lambda x+N_\lambda}{(x^2+px+q)^\lambda} \\
+&\quad + \dots + \frac{R_1x+S_1}{x^2+rx+s} + \frac{R_2x+S_2}{(x^2+rx+s)^2} + \dots + \frac{R_\mu x+S_\mu}{(x^2+rx+s)^\mu}
+\end{align*}$$
+>[!warning] 注意！
+>1. 若有 $\alpha$ 个重根，即某一因式为 $\alpha$ 次方，那么这个项就拆成分母从1次方加到 $\alpha$ 次方。
+>2. 对于分母为 $\Delta>0$ 的二次函数，那么其分子就是一次函数，并且依旧要符合规则1。
+
+接下来就能用待定系数法求出那些待定的系数 $A,B,M,N$ 等等。一般来说，这个过程不会太复杂，大可不必拿出考完的线代。
+
+>[!summary] 任务
+>尝试用待定系数法推出 $\displaystyle\frac{1}{(1+2x)(1+x^2)} = \frac{1}{5}\left[\frac{4}{1+2x} - \frac{2x}{1+x^2} + \frac{1}{1+x^2}\right]$
+
+当然，并不是所有时候都要用待定系数法，如果你的注意力惊人。
+也不是一定要给它拆成这种细碎的样子，因题目而异。如果不拆分有更快的做法，那就没必要拆。
+3. 对根式：欧拉代换（可选）
+>[!danger] 警告
+>欧拉代换法是你最后的防线，而非你的第一个想法。
+>当普通的代换能解决问题，如 $\sqrt{x^2+2x+2}=\sqrt{(x+1)^2+1}$，那么最好不用欧拉代换法。
+>如果实在想不出来怎么做，可以用欧拉替代法硬算，将其作为最后的手段。
+
+对于不定积分 $\int R\left(x,\sqrt{ax^2+bx+c}\right)dx \quad (a\neq0)$，可以从如下角度作代换：
+- 欧拉第一代换：如果 $a>0$，令 $\sqrt{ax^2+bx+c}=t-\sqrt{a}x$，或令 $\sqrt{ax^2+bx+c}=\sqrt{a}x+t$。
+- 欧拉第二代换：如果 $c>0$，令 $\sqrt{ax^2+bx+c}=tx-\sqrt{c}$，或令 $\sqrt{ax^2+bx+c}=tx+\sqrt{c}$。
+- 欧拉第三代换：如果 $ax^2+bx+c=a(x-\alpha)(x-\beta)$，则可以令 $\sqrt{ax^2+bx+c}=t(x-\alpha)$
+对于任意一种换元，换元后等式两边平方，此时 x^2 这一项将会被抵消，因此用含 t 的多项式将 x 表示出来。
+>[!todo] 示例
+>求不定积分$\displaystyle\int \frac{dx}{(x^2+a^2)\sqrt{a^2-x^2}}$
+>解：令 $\sqrt{a^2-x^2}=t(a-x)$，则
+>$\displaystyle t^2=\frac{a+x}{a-x},\quad x=a\frac{t^2-1}{t^2+1},\quad dx=\frac{4at}{(t^2+1)^2}dt$
+>$\displaystyle x^2+a^2=\frac{2a^2(t^4+1)}{(t^2+1)^2}$
+>于是
+>$\begin{align}\int \frac{dx}{(x^2+a^2)\sqrt{a^2-x^2}} &= \int \frac{\frac{4at}{(t^2+1)^2}dt}{\frac{2a^2(t^4+1)}{(t^2+1)^2}\cdot\frac{2at}{t^2+1}} \\&= \frac{1}{2a^2}\int \frac{2t^2+2}{t^4+1}dt\end{align}$
+>之后可以按照有理式的方法继续积分下去
+
+>待填入：[高等数学：欧拉替换法在求解不定积分时的应用 - 知乎](https://zhuanlan.zhihu.com/p/348304254)
 
 >[!Bug] 待补充
 >而且，我们还得穿插定积分内容
