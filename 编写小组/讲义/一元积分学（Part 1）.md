@@ -227,6 +227,9 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 >&=\text e^u\sin u+\text e^u\cos u-I
 >\end{aligned},$$于是 $\displaystyle I=\dfrac{1}{2}\text e^u(\sin u+\cos u)=\dfrac{(x+1)\text e^{\arctan x}}{2\sqrt{x^2+1}}+C.$
 
+>[!tip] 小技巧
+>如何通过 $u$ 算出 $\sin x$ 和 $\cos x$？只要画一个三角形就看可以很直观地看出来了。<img src='三角形.png' width='200' height='200'></img>
+
 >[!bug] TODO: 待补充 种类
 
 然而，不少积分不能直接积出来。对于部分情况，需要用到**循环式**和**递推式**求解。
@@ -300,11 +303,26 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 
 上面两种类型并没有穷尽所有的可能，只是抛砖引玉，实际可能的变形是有很多的。
 <br>
-先来一道简单的题目热热身。
->[!example] 已知 
->$$\displaystyle\begin{cases} 
->x = \int_{0}^{t} \frac{\sin u}{u} \text du, \\ 
->y = \int_{0}^{t} \sin u^2 \text du, 
+先来两道简单的题目热热身。
+>[!example] 例题
+>计算极限  
+>$$
+   \lim_{x\to 0}\frac{x - \large\int_{0}^{x}\cos t^{2}\mathrm{d}t}{x^{3}\ln(1 + \tan^{2}x)}。
+>$$
+
+>[!note] 解析：
+>用等价无穷小代换和洛必达法则$$\begin{aligned}
+>\text{原式}&=\lim_{x\to0}\frac{x-\large\int_0^x\cos t^2\text dt}{x^5}\\
+>&\overset{\frac{0}{0}}{=}\lim_{x\to0}\frac{1-\cos x^2}{5x^4}\\
+>&=\lim_{x\to0}\frac{\frac{1}{2}x^4}{5x^4}\\
+>&=\frac{1}{10}.
+>\end{aligned}$$
+
+>[!example] 例题
+>已知 
+>$$\begin{cases} 
+>x = \large\int_{0}^{t} \frac{\sin u}{u} \text du, \\ 
+>y = \large\int_{0}^{t} \sin u^2 \text du, 
 >\end{cases}$$ 
 >求$\dfrac{\text dy}{\text dx}$和$\dfrac{\text d^2 y}{\text dx^2}$。 
 
@@ -313,7 +331,7 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 >故 $$\frac{\text dy}{\text dx}=\frac{\text dy}{\text dt}\bigg/\frac{\text dx}{\text dt}=t\sin t.$$
 >$$\frac{\text d^2y}{\text dx^2}=\frac{\text d}{\text dt}\left(\frac{\text dy}{\text dx}\right)\bigg/\frac{\text dx}{\text dt}=\frac{\sin t+t\cos t}{\sin t^2}.$$
 
-积分的题目往往比较地综合，会和其他的知识点一起考察，比如……级数。
+积分的题目往往比较综合，会和其他的知识点一起考察，比如……级数。
 
 >[!example] 例题
 >已知函数 $$f_n(x)=\int_0^xt^2(1-t)\sin^{2n}t\text dt,\qquad x\in(-\infty,+\infty),$$其中 $n$ 为正整数。
@@ -448,3 +466,31 @@ Trivia: 魔法六边形
 	<text x="-147.3" y="-407.8" transform="scale(1.00188,0.998123)" style="font-family:Arial; font-size:42.7px; fill:black; stroke:white;">1</text>
 </g>
 </svg>
+
+%%不知道该放在哪的题
+另外，此题解析等所有说明都不要删除，保留一种探索感%%
+
+>[!example] 例题
+>已知函数 $f(x), g(x)$ 在闭区间 $[a, b]$ 上连续，且 $f(x) > 0$，则极限 $\displaystyle \lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}  \, \text dx$ 的值为$\underline{\qquad}.$
+
+>[!note] 解析（？）
+>由于 $f(x)$ 在 $[a,b]$ 上连续，由最值定理，存在 $m,M>0$，使得 $m\leqslant f(x)\leqslant M,$ 故$$\sqrt[n]{m} \int_a^b g(x)  \, \text dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}  \, \text dx \leqslant \sqrt[n]{M} \int_a^b g(x)  \, \text dx.$$又有 $\displaystyle \lim_{n \to \infty} \sqrt[n]{m} = \lim_{n \to \infty} \sqrt[n]{M} = 1$，所以由夹逼定理知$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}  \, \text dx = \int_a^b g(x)  \, \text dx.$$
+
+>[!summary] 题后总结
+>这道题很妙，妙在想到用夹逼定理。但是这是怎么想到的呢？
+>我们观察一下极限的形式：有一个开 $n$ 次根号。这会让我们想到这样一个极限：$$\lim_{n\to\infty}\sqrt[n]a=1,a\gt0.$$从而可以用放缩和夹逼定理做出这道题……吗？
+>不对，我们再看一下这个不等式：$$\sqrt[n]{m} \int_a^b g(x)  \, \text dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}  \, \text dx \leqslant \sqrt[n]{M} \int_a^b g(x)  \, \text dx,$$它真的成立吗？并不，题中没有给出 $g(x)\gt0$ 的条件，甚至连 $g(x)$ 保持同号的条件都没有，所以并不成立。那么应该怎么做呢？下面给出一种思路。
+
+>[!note] 解析
+>仍然利用 $f(x)$ 的最值和这个极限 $\lim\limits_{n\to\infty}\sqrt[n]a=1,a\gt0.$ 
+>考虑差$\displaystyle\int_a^bg(x)\sqrt[n]{f(x)}\text dx-\int_a^bg(x)\text dx=\int_a^bg(x)(\sqrt[n]{f(x)}-1)\text dx.$
+>由于我们不清楚 $g(x)$ 的符号，所以考虑绝对值 $$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx.$$由于 $g(x)$ 在 $[a,b]$ 上连续，所以它必定有界，即存在正数 $G\gt0$，使得 $|g(x)|\leqslant G,$ 故$$0\leqslant\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx\leqslant G\int_a^b|\sqrt[n]{f(x)}-1|\text dx.$$由于 $\displaystyle\sqrt[n]m-1\leqslant \sqrt[n]{f(x)}-1\leqslant\sqrt[n]M-1,$ 所以 $\displaystyle\lim_{n\to\infty}\sqrt[n]{f(x)}-1=0,$ 从而 $\displaystyle\lim_{n\to\infty}|\sqrt[n]{f(x)}-1|=0,$ 故$$\displaystyle\lim_{n\to\infty}\int_a^bG|\sqrt[n]{f(x)}-1|=0\qquad(*),$$由夹逼定理知$$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx=0,$$故$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}  \, \text dx = \int_a^b g(x)  \, \text dx.$$
+
+>[!summary] 题后总结
+>上述方法是怎么想到的呢？其实，我先用画图软件大致确定了答案应该是 $\displaystyle\int_a^bg(x)\text dx,$ 然后想：不知道符号的处理办法应该是加绝对值。但是加绝对值会有这样一个问题：$\displaystyle\lim f(x)=a\Rightarrow \lim |f(x)|=|a|,$ 但 $\displaystyle\lim |f(x)|=|a|\nRightarrow \lim f(x)=a$。但有一种特殊情况：<span style='color: blue'>如果</span> $\color{blue}a=0,$ <span style='color: blue'>那么反过来也是成立的</span>。所以可以考虑被积函数和结果式子的差，这样就可以让极限值为 $0$，从而可以得出结论了。
+>其实上面的证明还有点小瑕疵，就是 $(*)$ 处。里面的极限等于零真的可以推出积分的极限等于零吗？确实是可以的，但这是有条件的。我们先给出这道题可以这么做的证明，再说条件是什么。
+>>[!note] 补充证明
+>>由于 $f(x)$ 是连续的，所以 $\sqrt[n]{f(x)}-1$ 也是连续的，从而由积分中值定理可知，存在 $\xi\in(a,b),$ 使得 $\displaystyle \int_a^b\sqrt[n]{f(x)}-1\text dx=\sqrt[n]{f(\xi)}-1\to0\,(n\to\infty).$ 
+>
+>实际上，只有函数“一致连续”才能得出极限和积分号可以互换的结论；就上面这道题而言，就是我们可以先求 $\lim\limits_{n\to\infty}(\sqrt[n]f(x)-1)$ 再求这个积分。有兴趣的可以自行去了解一致连续是什么意思。
+>有趣的是，这道题的第一个解析是原卷的解析，也就是说，出卷老师也没有意识到这个地方不能用夹逼定理。大家不能忘记夹逼定理的方法，但是也要注意具体情形下到底能不能用夹逼定理，<span style='color: blue'>这个不等式究竟是否成立</span>。
