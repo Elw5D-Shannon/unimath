@@ -29,9 +29,9 @@ aliases:
 >设 $f(x)$ 在区间 $[a,b]$ 上可积，且有一个原函数 $F(x)$ ，则$$\int_a^bf(x)\text dx=F(b)-F(a).$$
 
 使用这个定理是有条件的。因为 $F(x)$ 是 $f(x)$ 的一个原函数，所以它必须可导，从而必须<span class="emphasize">连续</span>。
-有了这个定理，我们就可以比较方便地计算定积分了——至少比用定义方便。并且，这也让我们有了求不定积分的动力。所以，接下来是一些常用的基本不定积分公式（更详尽的在最下面）：
+有了这个定理，我们就可以比较方便地计算定积分了——至少比用定义方便。并且，这也让我们有了求不定积分的动力。根据不定积分的定义，我们可以将基本求导公式反推，得到下面的常用的基本不定积分公式（更详尽的在最下面）：
 
-$\displaystyle\int 0 \, dx =C$
+$\displaystyle\int 0 \, dx =C$，<span class="emphasize">补药漏写常数 C 口牙！</span>
 $\displaystyle\int k \, dx = kx + C$ （ $k$  为常数）
 $\displaystyle\int x^\mu \, dx = \frac{x^{\mu+1}}{\mu+1} + C$ （ $\mu \neq -1$ ）
 $\displaystyle\int \frac{1}{x} \, dx = \ln|x| + C$ 
@@ -200,7 +200,7 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 >令 $t=\sqrt[6]{x+1}$，则 $x=t^6-1$，$\mathrm dx=6t^5\mathrm dt$，则 
 >$\begin{align}\int \frac{dx}{\sqrt[6]{x+1} - \sqrt[3]{x+1}} &= \int \frac{6t^5 dt}{t - t^2} \\&= 6\int \frac{t^4}{1-t} dt \\&= 6\int \left(-t^3 - t^2 - t - 1 + \frac{1}{1-t}\right) dt \\&= 6\left(-\frac{t^4}{4} - \frac{t^3}{3} - \frac{t^2}{2} - t - \ln|1-t|\right) + C \\&= -\frac{3}{2}\sqrt[3]{(x+1)^2} - 2\sqrt{x+1} - 3\sqrt[3]{x+1} - 6\sqrt[6]{x+1} -\\ 6\ln|\sqrt[6]{x+1} -1| + C\end{align}$
 
->[!error] 待决策
+>[!bug] 待决策
 >##### 高次幂多项式与三角函数的转化
 >$$\int \frac{\sqrt{\arctan x}}{1+x^2}\mathrm dx$$
 >原式
@@ -303,7 +303,8 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 >\end{aligned},$$于是 $\displaystyle I=\dfrac{1}{2}\text e^u(\sin u+\cos u)=\dfrac{(x+1)\text e^{\arctan x}}{2\sqrt{x^2+1}}+C.$
 
 >[!tip] 小技巧
->如何通过 $u$ 算出 $\sin x$ 和 $\cos x$？只要画一个三角形就看可以很直观地看出来了。<img src='三角形.png' width='200' height='200'></img>
+>如何通过 $u$ 算出 $\sin x$ 和 $\cos x$？只要画一个三角形就看可以很直观地看出来了。
+><img src="三角形.png" width="200" height="200"/>
 
 %%参考：[Math is Fun - Integration by Parts](https://www.mathsisfun.com/calculus/integration-by-parts.html)
 仅供娱乐，切勿当真%%
@@ -324,13 +325,13 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 >这样我们就能依次推出 $I_2,I_3,\cdots,I_n$
 
 >[!bug] 这道题求通项似乎是一件很困难的事。
+>一般来说不要求像数列一样求出通项。
 
 >[!example] 例题
 >证明 $\displaystyle I_n=\int\tan^nx\text{d}x=\dfrac{\tan^{n-1}x}{n-1}-I_{n-2}.$
 
 >[!solution] 解析
 >$\displaystyle \begin{align}I_n&=\int\tan^{n-2}x(\sec^2x-1)\text{d}x\\&=\int\tan^{n-2}x\text{d}(\tan x)-I_{n-2}\\&=\dfrac{\tan^{n-1}x}{n-1}-I_{n-2}\end{align}$
-
 
 >[!example] 例题
 >记 $\displaystyle I_n = \int_0^{\frac{\pi}{4}} \sec^n x  \, \mathrm{d}x, \ (n=0,1,2,\cdots)$。
@@ -493,6 +494,26 @@ $$于是$$\begin{aligned}
 >[!solution] 解析
 >$f(x)=x-[x]$ 是周期为 $1$ 的函数，那么 $\displaystyle\int_{-2026}^{2026} (x-[x])\mathrm dx=5052\int_0^1(x-[x])\mathrm dx=5052\int_0^1x\mathrm dx=5052 \left[\frac{x^2}{2} \right]_0^1=2026$
 
+>[!example] 例题
+>已知 $a_n = \int_0^{n\pi} |\cos x|  \, \text dx,\ n=1,2,\cdots$，则下列级数收敛的是（ ）。
+(A) $\displaystyle \sum_{n=1}^\infty \frac{a_n}{n}$
+(B) $\displaystyle \sum_{n=1}^\infty \frac{a_n}{n^2}$
+(C) $\displaystyle \sum_{n=1}^\infty (-1)^n \frac{a_n}{n}$
+(D) $\displaystyle \sum_{n=1}^\infty (-1)^n \frac{a_n}{n^2}$
+
+>[!note] 解析
+>由于函数 $|\cos x|$ 以 $\pi$ 为周期，所以$$a_n = \int_0^{n\pi} |\cos x|  \, \text dx = n \int_0^{\pi} |\cos x|  \, \text dx = n \cdot 2 \int_0^{\pi/2} \cos x  \, \text dx = 2n\sin x|_0^{\pi/2} = 2n.$$
+>对于选项(A)，有 $\displaystyle\sum_{n=1}^{\infty}\frac{a_n}{n}=\sum_{n=1}^{\infty}2,$ 显然发散；
+>对于选项(B)，有 $\displaystyle\sum_{n=1}^{\infty}\frac{a_n}{n^2}=\sum_{n=1}^{\infty}\frac{2}{n},$ 是调和级数的两倍，也发散；
+>对于选项(C)，有 $\displaystyle\sum_{n=1}^\infty (-1)^n \frac{a_n}{n} = \sum_{n=1}^\infty (-1)^n \frac{2n}{n} = \sum_{n=1}^\infty (-1)^n 2,$ 通项不趋于 $0$，故发散；
+>对于选项(D)，有 $\displaystyle\sum_{n=1}^\infty (-1)^n \frac{a_n}{n^2} = \sum_{n=1}^\infty (-1)^n \frac{2n}{n^2} = 2 \sum_{n=1}^\infty \frac{(-1)^n}{n}$，为交错级数，由莱布尼兹判别法易知其收敛.
+>故选D.
+
+>[!summary] 题后总结
+>这道题的关键在于利用三角函数的<span style='color: blue'>周期性</span>，然后再利用对称性（第二个等号处）简化积分的计算。尤其要注意带绝对值的三角函数，它的定积分基本上只需要对 $\dfrac{\pi}{2}$ 的长度进行研究就可以了（见图）。
+
+![[cosx的绝对值.png]]
+
 >[!bug] 待审查
 
 2. 除此之外，还可以把定积分的上下限劈开：$\int_a^bf(x)\mathrm dx=\int_a^cf(x)\mathrm dx+\int_c^bf(x)\mathrm dx$，这在 $f(x)$ 是分段函数（如绝对值）的情况下特别有用：
@@ -518,8 +539,6 @@ $$
 
 >[!bug] 待审查
 
-
-定积分的作用不少，%%TODO:待补充%%
 而且，有不少定积分的应用<span class="emphasize">超乎你的想象</span>。
 >[!example] 例题
 >(1) 设 $\displaystyle a_n = 1 + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \cdots + \frac{1}{\sqrt{n}} - 2\sqrt{n}$。证明：数列 $\{a_n\}$ 收敛；
@@ -550,6 +569,11 @@ $$
 >>记 $\displaystyle b_n=1+\frac{1}{2}+\cdots+\frac{1}{n}-\ln n,$ 求证 $\{b_n\}$ 收敛。并利用这个结果证明 $\displaystyle\ln2=\lim_{n\to\infty}\left(\frac{1}{n+1}+\frac{1}{n+2}+\cdots+\frac{1}{2n}\right).$
 >
 >除了有界性，证明方法和上面如出一辙！所以第一问不要求大家完全掌握，了解为主；但第二问的解2需要掌握，这是利用定积分定义的经典题目。
+
+定积分的大坑主要是换元时要换上下限。
+>[!warning] 注意！
+>单纯把 $f'(x)\mathrm dx$ 换成 $\mathrm df(x)$ 不需要改变上下限，因为后者也是在对 $x$ 求积分，此时上下限仍然针对 $x$；当你使用<span class="danger">全新的变量</span>，如令 $t=f(x)$，且你决定设置 $t$ 为新积分变量而非单纯的关于 $x$ 的函数时，你必须更换成新的上下限。
+
 # Extra. 常用积分公式速记
  
 ### 二、三角函数积分
@@ -616,20 +640,20 @@ Trivia: 魔法六边形
 另外，此题解析等所有说明都不要删除，保留一种探索感%%
 
 >[!todo] 示例
->已知函数 $f(x), g(x)$ 在闭区间 $[a, b]$ 上连续，且 $f(x) > 0$，则极限 $\displaystyle \lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm \text dx$ 的值为$\underline{\qquad}.$
+>已知函数 $f(x), g(x)$ 在闭区间 $[a, b]$ 上连续，且 $f(x) > 0$，则极限 $\displaystyle \lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx$ 的值为$\underline{\qquad}.$
 
 >[!fail] 错解
->由于 $f(x)$ 在 $[a,b]$ 上连续，由最值定理，存在 $m,M>0$，使得 $m\leqslant f(x)\leqslant M,$ 故$$\sqrt[n]{m} \int_a^b g(x)\mathrm \text dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}\mathrm \text dx \leqslant \sqrt[n]{M} \int_a^b g(x)\mathrm \text dx.$$又有 $\displaystyle \lim_{n \to \infty} \sqrt[n]{m} = \lim_{n \to \infty} \sqrt[n]{M} = 1$，所以由夹逼定理知$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm \text dx = \int_a^b g(x)\mathrm \text dx.$$
+>由于 $f(x)$ 在 $[a,b]$ 上连续，由最值定理，存在 $m,M>0$，使得 $m\leqslant f(x)\leqslant M,$ 故$$\sqrt[n]{m} \int_a^b g(x)\mathrm dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx \leqslant \sqrt[n]{M} \int_a^b g(x)\mathrm dx.$$又有 $\displaystyle \lim_{n \to \infty} \sqrt[n]{m} = \lim_{n \to \infty} \sqrt[n]{M} = 1$，所以由夹逼定理知$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx = \int_a^b g(x)\mathrm dx.$$
 
 >[!summary] 题后总结
 >这道题很妙，妙在想到用夹逼定理。但是这是怎么想到的呢？
 >我们观察一下极限的形式：有一个开 $n$ 次根号。这会让我们想到这样一个极限：$$\lim_{n\to\infty}\sqrt[n]a=1,a\gt0.$$从而可以用放缩和夹逼定理做出这道题……吗？
->不对，我们再看一下这个不等式：$$\sqrt[n]{m} \int_a^b g(x)\mathrm \text dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}\mathrm \text dx \leqslant \sqrt[n]{M} \int_a^b g(x)\mathrm \text dx,$$它真的成立吗？并不，题中没有给出 $g(x)\gt0$ 的条件，甚至连 $g(x)$ 保持同号的条件都没有，所以并不成立。那么应该怎么做呢？下面给出一种思路。
+>不对，我们再看一下这个不等式：$$\sqrt[n]{m} \int_a^b g(x)\mathrm dx \leqslant \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx \leqslant \sqrt[n]{M} \int_a^b g(x)\mathrm dx,$$它真的成立吗？并不，题中没有给出 $g(x)\gt0$ 的条件，甚至连 $g(x)$ 保持同号的条件都没有，所以并不成立。那么应该怎么做呢？下面给出一种思路。
 
 >[!done] 正解 
 >仍然利用 $f(x)$ 的最值和这个极限 $\lim\limits_{n\to\infty}\sqrt[n]a=1,a\gt0.$ 
 >考虑差$\displaystyle\int_a^bg(x)\sqrt[n]{f(x)}\text dx-\int_a^bg(x)\text dx=\int_a^bg(x)(\sqrt[n]{f(x)}-1)\text dx.$
->由于我们不清楚 $g(x)$ 的符号，所以考虑绝对值 $$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx.$$由于 $g(x)$ 在 $[a,b]$ 上连续，所以它必定有界，即存在正数 $G\gt0$，使得 $|g(x)|\leqslant G,$ 故$$0\leqslant\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx\leqslant G\int_a^b|\sqrt[n]{f(x)}-1|\text dx.$$由于 $\displaystyle\sqrt[n]m-1\leqslant \sqrt[n]{f(x)}-1\leqslant\sqrt[n]M-1,$ 所以 $\displaystyle\lim_{n\to\infty}\sqrt[n]{f(x)}-1=0,$ 从而 $\displaystyle\lim_{n\to\infty}|\sqrt[n]{f(x)}-1|=0,$ 故$$\displaystyle\lim_{n\to\infty}\int_a^bG|\sqrt[n]{f(x)}-1|=0\qquad(*),$$由夹逼定理知$$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx=0,$$故$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm \text dx = \int_a^b g(x)\mathrm \text dx.$$
+>由于我们不清楚 $g(x)$ 的符号，所以考虑绝对值 $$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx.$$由于 $g(x)$ 在 $[a,b]$ 上连续，所以它必定有界，即存在正数 $G\gt0$，使得 $|g(x)|\leqslant G,$ 故$$0\leqslant\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx\leqslant G\int_a^b|\sqrt[n]{f(x)}-1|\text dx.$$由于 $\displaystyle\sqrt[n]m-1\leqslant \sqrt[n]{f(x)}-1\leqslant\sqrt[n]M-1,$ 所以 $\displaystyle\lim_{n\to\infty}\sqrt[n]{f(x)}-1=0,$ 从而 $\displaystyle\lim_{n\to\infty}|\sqrt[n]{f(x)}-1|=0,$ 故$$\displaystyle\lim_{n\to\infty}\int_a^bG|\sqrt[n]{f(x)}-1|=0\qquad(*),$$由夹逼定理知$$\int_a^b|g(x)(\sqrt[n]{f(x)}-1)|\text dx=0,$$故$$\lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx = \int_a^b g(x)\mathrm dx.$$
 
 >[!summary] 题后总结
 >上述方法是怎么想到的呢？其实，我先用画图软件大致确定了答案应该是 $\displaystyle\int_a^bg(x)\text dx,$ 然后想：不知道符号的处理办法应该是加绝对值。但是加绝对值会有这样一个问题：$\displaystyle\lim f(x)=a\Rightarrow \lim |f(x)|=|a|,$ 但 $\displaystyle\lim |f(x)|=|a|\nRightarrow \lim f(x)=a$。但有一种特殊情况：<span style='color: blue'>如果</span> $\color{blue}a=0,$ <span style='color: blue'>那么反过来也是成立的</span>。所以可以考虑被积函数和结果式子的差，这样就可以让极限值为 $0$，从而可以得出结论了。

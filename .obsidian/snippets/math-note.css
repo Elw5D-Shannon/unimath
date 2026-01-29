@@ -1,5 +1,10 @@
-span.emphasize {
+.emphasize {
     color: orange;
+    font-weight:bold;
+}
+
+.danger{
+    color: #ff1111;
     font-weight:bold;
 }
 
