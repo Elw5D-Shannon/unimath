@@ -2,3 +2,8 @@ span.emphasize {
     color: orange;
     font-weight:bold;
 }
+
+.callout[data-callout="solution"] {
+    --callout-color: 181,230,29;
+    --callout-icon: lucide-calculator;
+}
