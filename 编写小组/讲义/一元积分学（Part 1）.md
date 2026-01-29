@@ -14,10 +14,11 @@ aliases:
 常见的预处理方式：
 1. （对定积分：）靠奇函数来消项；通过拆分上下限来简化可能性(?)
 2. （对有理式：）有理式的拆解
+>[!Bug] 待补充
 ## 换元积分法
 常见特征：被积函数有三角函数、 $x^2\pm a^2$ 等元素
 使用换元积分法非常考验你对被积函数的敏感程度，也就是“题感”，方法本身是特别容易理解的，因此我们必须熟练记忆一些初等函数求导公式以及额外补充的一些推出来的求导公式。
->[!example] 开胃菜
+>[!todo] 开胃菜
 >求不定积分 $\int\cos^2x\sin x\mathrm dx$.
 >>解：令 $u=\cos x$；两边求微：$\mathrm du=-\sin x\mathrm dx$，
 >>$\int\cos^2x\sin x\mathrm dx=-\int u^2\mathrm du=-\dfrac{u^3}{3}+C=-\dfrac{\cos^3 x}{3}+C$
@@ -125,10 +126,53 @@ $\sqrt{x^2+a^2} = \sqrt{a^2\tan^2 t + a^2} = a\sec t$
 >最先匹配的是“**对**”（对数函数 $\ln x$），取 $u=\ln x,\mathrm dv=x^3\mathrm dx$，则：
 >$\begin{align}\int x^3 \ln x\mathrm dx&= \int \ln x d\left(\frac{x^4}{4}\right) \\&= \frac{1}{4}x^4 \ln x - \frac{1}{4}\int x^3\mathrm dx \\&= \frac{1}{4}x^4 \ln x - \frac{1}{16}x^4 + C\end{align}$
 
+>[!example] 例题
+>求不定积分 $\int\mathrm e^{\sqrt{x}}\mathrm dx$
 
-# Section 3  特殊积分
-### 1. 依靠循环式求解的积分
-### 2. 依靠递推式求解的积分
+>[!note] 解析
+>我们可以提前代换变量，将根式消去。
+>令 $t=\sqrt{x}$，则 $t^2=x,\ 2t\mathrm dt=\mathrm dx$，这样就能将根式化为整式。
+>$\displaystyle\int\mathrm e^\sqrt{x}\mathrm dx=2\int t\mathrm e^t\mathrm dt$
+>取 $u=x$：
+>$\begin{align}\text{原式}&=2\int t\mathrm d\mathrm e^t\\&=2t\mathrm e^t-2\int\mathrm e^t\mathrm dt\\&=2t\mathrm e^t-2\mathrm e^t+C\\&=2\mathrm e^\sqrt x(\sqrt x-1)+C\end{align}$
+
+>[!bug] TODO: 待补充 种类
+
+然而，不少积分不能直接积出来。对于部分情况，需要用到**循环式**和**递推式**求解。
+#### 2. 依靠循环式求解的积分
+**循环式**是指在进行分部积分的时候，多次循环会出现**同一积分式**：
+>[!todo] 示例
+>求不定积分 $\int\mathrm e^x \sin x\mathrm dx$
+>
+>>解：
+>>$\begin{align}\int\mathrm e^x \sin x\mathrm dx &= \int \sin x\mathrm d\mathrm e^x \\&=\mathrm e^x \sin x - \int\mathrm e^x\mathrm d(\sin x) \\&=\mathrm e^x \sin x - \int\mathrm e^x \cos x\mathrm dx \\&=\mathrm e^x \sin x - \int \cos x\mathrm d\mathrm e^x \\&=\mathrm e^x \sin x - \left(\mathrm e^x \cos x - \int\mathrm e^x\mathrm d(\cos x)\right) \\&=\mathrm e^x \sin x -\mathrm e^x \cos x - \int\mathrm e^x \sin x\mathrm dx\end{align}$
+>
+>可以看到，经过两次分部积分之后，$\int\mathrm e^x \sin x\mathrm dx$ 又一次出现了。
+>果断将它移到等式左边，直接同时除以 $2$：
+>$\int\mathrm e^x \sin x\mathrm dx=\mathrm e^x \sin x -\mathrm e^x \cos x - \int\mathrm e^x \sin x\mathrm dx\Rightarrow2\int\mathrm e^x \sin x\mathrm dx=\mathrm e^x \sin x -\mathrm e^x \cos x$
+>因此 $\displaystyle\int\mathrm e^x \sin x\mathrm dx=\frac{\mathrm e^x \sin x -\mathrm e^x \cos x}{2}$
+
+>[!bug] TODO:等待补充难题
+
+%%参考：[Math is Fun - Integration by Parts](https://www.mathsisfun.com/calculus/integration-by-parts.html)
+仅供娱乐，切勿当真%%
+
+#### 3. 依靠递推式求解的积分
+
+
+#### 4. 连续分部积分（选学？）
+>[!bug] 需要斟酌该内容是否重要。
+
+分部积分法的推广公式就是重复使用分部积分法法则。
+假设函数 $u,v$ 有 $n+1$ 阶连续导数，则：$\int u v^{(n+1)}\mathrm dx = \int u\mathrm d v^{(n)} = u v^{(n)} - \int v^{(n)}\mathrm du = u v^{(n)} - \int u' v^{(n)}\mathrm dx$
+我们还可以继续把 $\int u' v^{(n)}\mathrm dx$ 撕开：$\int u v^{(n+1)} dx = u v^{(n)} - u' v^{(n-1)} + u'' v^{(n-2)} - \dots + (-1)^n u^{(n)} v + (-1)^{n+1} \int u^{(n+1)} v dx$
+如果被积函数的因式之一是多项式，且次数较高的时候，这个公式特别方便。通常来说，取 $u$ 为该多项式。
+>[!todo] 示例
+>$\int (2x^3 + 3x^2 + 4x + 5)\mathrm e^x\mathrm dx$
+>我们可以令 $u=2x^3 + 3x^2 + 4x + 5$，$v=\mathrm e^x$
+>$u' = 6x^2 + 6x + 4,\quad u'' = 12x + 6,\quad u''' = 12$
+>于是$\begin{align*}\int (2x^3 + 3x^2 + 4x + 5) e^x dx &= (2x^3 + 3x^2 + 4x + 5)e^x - (6x^2 + 6x + 4)e^x + (12x + 6)e^x - 12e^x + C \\&= (2x^3 - 3x^2 + 10x - 5)e^x + C\end{align*}$
+>
 # Section 4  变限积分
 
 # Section 5  与积分相关的不等式证明
