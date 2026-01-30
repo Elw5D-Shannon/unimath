@@ -435,7 +435,7 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 利用牛顿-莱布尼兹公式和复合函数求导法则可以证明这三点。
 变限积分的一个难点就是被积函数里出现 $x$ 时应该怎么处理。一般来说有两个处理办法：
 
-1. 类似 $\displaystyle\int_a^x(t+g(t))f(t)\text dt$ 的形式，可以拆开处理，即 $\displaystyle\int_a^x(x+g(t))f(t)\text dt= x\int_a^xf(t)\text dt+\int_a^xg(t)f(t)\text dt;$
+1. 类似 $\displaystyle\int_a^x(x+g(t))f(t)\text dt$ 的形式，可以拆开处理，即 $\displaystyle\int_a^x(x+g(t))f(t)\text dt= x\int_a^xf(t)\text dt+\int_a^xg(t)f(t)\text dt;$
 2. 类似 $\displaystyle\int_a^xf(x+t)\text dt$ 的形式，可以进行换元，令 $u=x+t$，则 $\text dt=\text du$，所以 $\displaystyle\int_a^xf(x+t)\text dt=\int_{x+a}^{2x}f(u)\text du.$
 
 上面两种类型并没有穷尽所有的可能，只是抛砖引玉，实际可能的变形是有很多的。
