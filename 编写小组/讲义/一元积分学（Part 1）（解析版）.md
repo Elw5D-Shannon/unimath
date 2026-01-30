@@ -603,6 +603,8 @@ $$于是$$\begin{aligned}
 %%不知道该放在哪的题
 另外，此题解析等所有说明都不要删除，保留一种探索感%%
 
+<br>
+
 >[!example] 例题
 >已知函数 $f(x), g(x)$ 在闭区间 $[a, b]$ 上连续，且 $f(x) > 0$，则极限 $\displaystyle \lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx$ 的值为$\underline{\qquad}.$
 
