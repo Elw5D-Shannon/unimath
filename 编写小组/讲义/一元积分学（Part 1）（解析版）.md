@@ -31,18 +31,23 @@ aliases:
 使用这个定理是有条件的。因为 $F(x)$ 是 $f(x)$ 的一个原函数，所以它必须可导，从而必须<span class="emphasize">连续</span>。
 有了这个定理，我们就可以比较方便地计算定积分了——至少比用定义方便。并且，这也让我们有了求不定积分的动力。根据不定积分的定义，我们可以将基本求导公式反推，得到下面的常用的基本不定积分公式（更详尽的在最下面）：
 
-$\displaystyle\int 0 \, dx =C$，<span class="emphasize">补药漏写常数 C 口牙！</span>
-$\displaystyle\int k \, dx = kx + C$ （ $k$  为常数）
-$\displaystyle\int x^\mu \, dx = \frac{x^{\mu+1}}{\mu+1} + C$ （ $\mu \neq -1$ ）
-$\displaystyle\int \frac{1}{x} \, dx = \ln|x| + C$ 
-$\displaystyle\int a^x \, dx = \frac{a^x}{\ln a} + C$ （ $a>0,a\neq1$ ）
-$\displaystyle\int e^x \, dx = e^x + C$ 
-$\displaystyle\int \sin x \, dx = -\cos x + C$ 
-$\displaystyle\int \cos x \, dx = \sin x + C$ 
-$\displaystyle\int \tan x \, dx = -\ln|\cos x| + C$
-$\displaystyle\int \cot x \, dx = \ln|\sin x| + C$
-$\displaystyle\int \sec x \, dx = \ln|\sec x + \tan x| + C$ 
-$\displaystyle\int \csc x \, dx = \ln|\csc x - \cot x| + C$ 
+$\displaystyle\int 0\mathrm dx =C$，<span class="emphasize">补药漏写常数 C 口牙！</span>
+$\displaystyle\int k\mathrm dx = kx + C$ （ $k$  为常数）
+$\displaystyle\int x^\mu\mathrm dx = \frac{x^{\mu+1}}{\mu+1} + C$ （ $\mu \neq -1$ ）
+$\displaystyle\int \frac{1}{x}\mathrm dx = \ln|x| + C$ 
+$\displaystyle\int a^x\mathrm dx = \frac{a^x}{\ln a} + C$ （ $a>0,a\neq1$ ）
+$\displaystyle\int e^x\mathrm dx = e^x + C$ 
+$\displaystyle\int \sin x\mathrm dx = -\cos x + C$ 
+$\displaystyle\int \cos x\mathrm dx = \sin x + C$ 
+ $\displaystyle\int \sec^2 x\mathrm dx = \tan x + C$ 
+ $\displaystyle\int \csc^2 x\mathrm dx = -\cot x + C$ 
+ $\displaystyle\int \sec x \tan x\mathrm dx = \sec x + C$ 
+ $\displaystyle\int \csc x \cot x\mathrm dx = -\csc x + C$ 
+以下公式不是基本不定积分公式，但是也很常见，必须熟记：
+$\displaystyle\int \tan x\mathrm dx = -\ln|\cos x| + C$
+$\displaystyle\int \cot x\mathrm dx = \ln|\sin x| + C$
+$\displaystyle\int \sec x\mathrm dx = \ln|\sec x + \tan x| + C$ 
+$\displaystyle\int \csc x\mathrm dx = \ln|\csc x - \cot x| + C$ 
 （这一列撬棍是不是特别喜感哈哈哈哈）
 # Section 2  积分方法
 ## 预处理
@@ -173,8 +178,8 @@ $\sqrt{x^2+a^2} = \sqrt{a^2\tan^2 t + a^2} = a\sec t$
 >因此$$\sum_{n=1}^\infty a_n = \lim_{n \to \infty} \left( \frac{1}{2} - \frac{1}{n+2} \right) = \frac{1}{2}.$$
 >**解2：** 令 $t=1-x$，则
 >$$\begin{aligned}
-a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
-&= \int_0^1 (t^n - t^{n+1}) \, dt = \left[ \frac{t^{n+1}}{n+1} - \frac{t^{n+2}}{n+2} \right]_0^1 \\
+a_n &= \int_0^1 x (1-x)^n\mathrm dx = \int_0^1 (1-t) t^n\mathrm dt \\
+&= \int_0^1 (t^n - t^{n+1})\mathrm dt = \left[ \frac{t^{n+1}}{n+1} - \frac{t^{n+2}}{n+2} \right]_0^1 \\
 &= \frac{1}{n+1} - \frac{1}{n+2}.
 >\end{aligned}$$
 >后同解1
@@ -336,17 +341,17 @@ a_n &= \int_0^1 x (1-x)^n \, dx = \int_0^1 (1-t) t^n \, dt \\
 >$\displaystyle \begin{align}I_n&=\int\tan^{n-2}x(\sec^2x-1)\text{d}x\\&=\int\tan^{n-2}x\text{d}(\tan x)-I_{n-2}\\&=\dfrac{\tan^{n-1}x}{n-1}-I_{n-2}\end{align}$
 
 >[!example] 例题
->记 $\displaystyle I_n = \int_0^{\frac{\pi}{4}} \sec^n x  \, \mathrm{d}x, \ (n=0,1,2,\cdots)$。
+>记 $\displaystyle I_n = \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx, \ (n=0,1,2,\cdots)$。
 (1) 证明：当 $n \geq 2$ 时，$\displaystyle I_n = \frac{2^{\frac{n-2}{2}}}{n-1} + \frac{n-2}{n-1} I_{n-2}$；
 (2) 计算 $I_3$ 的值。
 
 >[!solution] 解析
 >（1）证明：$$\begin{aligned}
-I_n &= \int_0^{\frac{\pi}{4}} \sec^n x  \, \mathrm{d}x = \int_0^{\frac{\pi}{4}} \sec^{n-2} x \cdot \sec^2 x  \, \mathrm{d}x \\
-&= \int_0^{\frac{\pi}{4}} \sec^{n-2} x  \, \mathrm{d}(\tan x) \\
-&= \left[ \tan x \sec^{n-2} x \right]_0^{\frac{\pi}{4}} - \int_0^{\frac{\pi}{4}} \tan x \cdot (n-2) \sec^{n-3} x \cdot \sec x \tan x  \, \mathrm{d}x \\
-&= 1 \cdot 2^{\frac{n-2}{2}} - (n-2) \int_0^{\frac{\pi}{4}} \tan^2 x \sec^{n-2} x  \, \mathrm{d}x \\
-&= 2^{\frac{n-2}{2}} - (n-2) \int_0^{\frac{\pi}{4}} (\sec^2 x - 1) \sec^{n-2} x  \, \mathrm{d}x \\
+I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^{n-2} x \cdot \sec^2 x \mathrm dx \\
+&= \int_0^{\frac{\pi}{4}} \sec^{n-2} x \mathrm d(\tan x) \\
+&= \left[ \tan x \sec^{n-2} x \right]_0^{\frac{\pi}{4}} - \int_0^{\frac{\pi}{4}} \tan x \cdot (n-2) \sec^{n-3} x \cdot \sec x \tan x \mathrm dx \\
+&= 1 \cdot 2^{\frac{n-2}{2}} - (n-2) \int_0^{\frac{\pi}{4}} \tan^2 x \sec^{n-2} x \mathrm dx \\
+&= 2^{\frac{n-2}{2}} - (n-2) \int_0^{\frac{\pi}{4}} (\sec^2 x - 1) \sec^{n-2} x \mathrm dx \\
 &= 2^{\frac{n-2}{2}} - (n-2) \left( I_n - I_{n-2} \right),
 \end{aligned}$$
 >故$\displaystyle I_n = \frac{2^{\frac{n-2}{2}}}{n-1} + \frac{n-2}{n-1} I_{n-2}.$
@@ -520,14 +525,14 @@ $$于是$$\begin{aligned}
 >$f(x)=x-[x]$ 是周期为 $1$ 的函数，那么 $\displaystyle\int_{-2026}^{2026} (x-[x])\mathrm dx=5052\int_0^1(x-[x])\mathrm dx=5052\int_0^1x\mathrm dx=5052 \left[\frac{x^2}{2} \right]_0^1=2026$
 
 >[!example] 例题
->已知 $\displaystyle a_n = \int_0^{n\pi} |\cos x|  \, \text dx,\ n=1,2,\cdots$，则下列级数收敛的是（ ）。
+>已知 $\displaystyle a_n = \int_0^{n\pi} |\cos x| \mathrm dx,\ n=1,2,\cdots$，则下列级数收敛的是（ ）。
 (A) $\displaystyle \sum_{n=1}^\infty \frac{a_n}{n}$
 (B) $\displaystyle \sum_{n=1}^\infty \frac{a_n}{n^2}$
 (C) $\displaystyle \sum_{n=1}^\infty (-1)^n \frac{a_n}{n}$
 (D) $\displaystyle \sum_{n=1}^\infty (-1)^n \frac{a_n}{n^2}$
 
 >[!note] 解析
->由于函数 $|\cos x|$ 以 $\pi$ 为周期，所以$$a_n = \int_0^{n\pi} |\cos x|  \, \text dx = n \int_0^{\pi} |\cos x|  \, \text dx = n \cdot 2 \int_0^{\pi/2} \cos x  \, \text dx = 2n\sin x|_0^{\pi/2} = 2n.$$
+>由于函数 $|\cos x|$ 以 $\pi$ 为周期，所以$$a_n = \int_0^{n\pi} |\cos x| \mathrm dx = n \int_0^{\pi} |\cos x| \mathrm dx = n \cdot 2 \int_0^{\pi/2} \cos x \mathrm dx = 2n\sin x|_0^{\pi/2} = 2n.$$
 >对于选项(A)，有 $\displaystyle\sum_{n=1}^{\infty}\frac{a_n}{n}=\sum_{n=1}^{\infty}2,$ 显然发散；
 >对于选项(B)，有 $\displaystyle\sum_{n=1}^{\infty}\frac{a_n}{n^2}=\sum_{n=1}^{\infty}\frac{2}{n},$ 是调和级数的两倍，也发散；
 >对于选项(C)，有 $\displaystyle\sum_{n=1}^\infty (-1)^n \frac{a_n}{n} = \sum_{n=1}^\infty (-1)^n \frac{2n}{n} = \sum_{n=1}^\infty (-1)^n 2,$ 通项不趋于 $0$，故发散；
@@ -571,7 +576,7 @@ $$于是$$\begin{aligned}
 >[!solution] 解析
 >（1）证明：
 >考虑数列的单调性，有 $$a_{n+1}-a_n=\frac{1}{\sqrt{n+1}} - 2\sqrt{n+1} + 2\sqrt{n} = \frac{1}{\sqrt{n+1}} - 2(\sqrt{n+1} - \sqrt{n}),$$由于$\displaystyle\sqrt{n+1} - \sqrt{n} = \frac{1}{\sqrt{n+1} + \sqrt{n}}\gt\frac{1}{2\sqrt{n+1}},$ 所以$$a_{n+1} - a_n = \frac{1}{\sqrt{n+1}} - \frac{2}{\sqrt{n+1} + \sqrt{n}}\lt0,$$即数列 $\{a_n\}$ 单调递减。
->另一方面，利用定积分进行估计：$$2\sqrt n-2=\int_1^n \frac{1}{\sqrt{x}}  \, dx < \sum_{k=1}^n \frac{1}{\sqrt{k}} < 1 + \int_1^n \frac{1}{\sqrt{x}}  \, dx=2\sqrt n-1,$$
+>另一方面，利用定积分进行估计：$$2\sqrt n-2=\int_1^n \frac{1}{\sqrt{x}} \mathrm dx < \sum_{k=1}^n \frac{1}{\sqrt{k}} < 1 + \int_1^n \frac{1}{\sqrt{x}} \mathrm dx=2\sqrt n-1,$$
 >所以 $-2\lt a_n\lt -1.$于是 $\{a_n\}$ 单调递减有下界，故数列收敛。
 >（2）
 >**解1：**
@@ -581,7 +586,7 @@ $$于是$$\begin{aligned}
 >$$\begin{aligned}
 \lim_{n \to \infty} &\frac{1}{\sqrt{n}} \left( \frac{1}{\sqrt{n+1}} + \frac{1}{\sqrt{n+2}} + \cdots + \frac{1}{\sqrt{2n}} \right) \\
 &= \lim_{n \to \infty} \frac{1}{n} \left( \frac{1}{\sqrt{1+\frac{1}{n}}} + \frac{1}{\sqrt{1+\frac{2}{n}}} + \cdots + \frac{1}{\sqrt{1+\frac{n}{n}}} \right)\\
-&= \int_0^1 \frac{1}{\sqrt{1+x}}  \, dx \\
+&= \int_0^1 \frac{1}{\sqrt{1+x}} \mathrm dx \\
 &= 2\sqrt{1+x} \bigg|_0^1 \\
 &= 2\sqrt{2} - 2.
 >\end{aligned}$$
@@ -626,6 +631,7 @@ $$于是$$\begin{aligned}
 定积分的大坑主要是换元时要换上下限。
 >[!warning] 注意！
 >单纯把 $f'(x)\mathrm dx$ 换成 $\mathrm df(x)$ 不需要改变上下限，因为后者也是在对 $x$ 求积分，此时上下限仍然针对 $x$；当你使用<span class="danger">全新的变量</span>，如令 $t=f(x)$，且你决定设置 $t$ 为新积分变量而非单纯的关于 $x$ 的函数时，你必须更换成新的上下限。
+>即：上下限是根据变量设置的，而非仅仅根据微分算子后面的表达式
 
 而不定积分的大坑就是换元之后要记得再还原。
 >[!warning] 注意！
@@ -638,45 +644,42 @@ $$于是$$\begin{aligned}
 
 # Extra. 常用积分公式速记
  
-### 一、其他三角函数积分
- 
- $\displaystyle\int \sec^2 x \, dx = \tan x + C$ 
- $\displaystyle\int \csc^2 x \, dx = -\cot x + C$ 
- $\displaystyle\int \sec x \tan x \, dx = \sec x + C$ 
- $\displaystyle\int \csc x \cot x \, dx = -\csc x + C$ 
- $\displaystyle\int \sin^2 x \, dx = \frac{x}{2} - \frac{\sin 2x}{4} + C$ 
- $\displaystyle\int \cos^2 x \, dx = \frac{x}{2} + \frac{\sin 2x}{4} + C$ 
+### 一、三角函数积分
+
+ $\displaystyle\int \sin^2 x\mathrm dx = \frac{x}{2} - \frac{\sin 2x}{4} + C$ 
+ $\displaystyle\int \cos^2 x\mathrm dx = \frac{x}{2} + \frac{\sin 2x}{4} + C$ 
 ### 二、反三角函数积分
- $\displaystyle\int \arcsin x \, dx = x\arcsin x + \sqrt{1-x^2} + C$ 
- $\displaystyle\int \arccos x \, dx = x\arccos x - \sqrt{1-x^2} + C$ 
- $\displaystyle\int \arctan x \, dx = x\arctan x - \frac{1}{2}\ln(1+x^2) + C$ 
- $\displaystyle\int \text{arccot } x \, dx = x\text{arccot } x + \frac{1}{2}\ln(1+x^2) + C$ 
+ $\displaystyle\int \arcsin x\mathrm dx = x\arcsin x + \sqrt{1-x^2} + C$ 
+ $\displaystyle\int \arccos x\mathrm dx = x\arccos x - \sqrt{1-x^2} + C$ 
+ $\displaystyle\int \arctan x\mathrm dx = x\arctan x - \frac{1}{2}\ln(1+x^2) + C$ 
+ $\displaystyle\int \text{arccot } x\mathrm dx = x\text{arccot } x + \frac{1}{2}\ln(1+x^2) + C$ 
 ### 三、含根式的积分（ a>0 ）
- $\displaystyle\int \frac{1}{\sqrt{a^2 - x^2}} \, dx = \arcsin\frac{x}{a} + C$ 
- $\displaystyle\int \frac{1}{\sqrt{x^2 + a^2}} \, dx = \ln\left(x + \sqrt{x^2 + a^2}\right) + C$ 
- $\displaystyle\int \frac{1}{\sqrt{x^2 - a^2}} \, dx = \ln\left|x + \sqrt{x^2 - a^2}\right| + C$ 
- $\displaystyle\int \sqrt{a^2 - x^2} \, dx = \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\arcsin\frac{x}{a} + C$ 
- $\displaystyle\int \sqrt{x^2 + a^2} \, dx = \frac{x}{2}\sqrt{x^2 + a^2} + \frac{a^2}{2}\ln\left(x + \sqrt{x^2 + a^2}\right) + C$ 
- $\displaystyle\int \sqrt{x^2 - a^2} \, dx = \frac{x}{2}\sqrt{x^2 - a^2} - \frac{a^2}{2}\ln\left|x + \sqrt{x^2 - a^2}\right| + C$ 
+ $\displaystyle\int \frac{1}{\sqrt{a^2 - x^2}}\mathrm dx = \arcsin\frac{x}{a} + C$ 
+ $\displaystyle\int \frac{1}{\sqrt{x^2 + a^2}}\mathrm dx = \ln\left(x + \sqrt{x^2 + a^2}\right) + C$ 
+ $\displaystyle\int \frac{1}{\sqrt{x^2 - a^2}}\mathrm dx = \ln\left|x + \sqrt{x^2 - a^2}\right| + C$ 
+ $\displaystyle\int \sqrt{a^2 - x^2}\mathrm dx = \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\arcsin\frac{x}{a} + C$ 
+ $\displaystyle\int \sqrt{x^2 + a^2}\mathrm dx = \frac{x}{2}\sqrt{x^2 + a^2} + \frac{a^2}{2}\ln\left(x + \sqrt{x^2 + a^2}\right) + C$ 
+ $\displaystyle\int \sqrt{x^2 - a^2}\mathrm dx = \frac{x}{2}\sqrt{x^2 - a^2} - \frac{a^2}{2}\ln\left|x + \sqrt{x^2 - a^2}\right| + C$ 
 ### 四、含分式的积分（ $a\neq0$ ）
- $\displaystyle\int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a}\arctan\frac{x}{a} + C$ 
- $\displaystyle\int \frac{1}{x^2 - a^2} \, dx = \frac{1}{2a}\ln\left|\frac{x - a}{x + a}\right| + C$ 
- $\displaystyle\int \frac{1}{ax + b} \, dx = \frac{1}{a}\ln|ax + b| + C$ 
+ $\displaystyle\int \frac{1}{x^2 + a^2}\mathrm dx = \frac{1}{a}\arctan\frac{x}{a} + C$ 
+ $\displaystyle\int \frac{1}{x^2 - a^2}\mathrm dx = \frac{1}{2a}\ln\left|\frac{x - a}{x + a}\right| + C$ 
+ $\displaystyle\int \frac{1}{ax + b}\mathrm dx = \frac{1}{a}\ln|ax + b| + C$ 
 ### 五、指数与对数结合积分
- $\displaystyle\int x e^x \, dx = (x-1)e^x + C$ 
-$\displaystyle\int x \ln x \, dx = \frac{x^2}{2}\ln x - \frac{x^2}{4} + C$ 
- $\displaystyle\int e^x \sin x \, dx = \frac{e^x}{2}(\sin x - \cos x) + C$ 
- $\displaystyle\int e^x \cos x \, dx = \frac{e^x}{2}(\sin x + \cos x) + C$ 
+ $\displaystyle\int x e^x\mathrm dx = (x-1)e^x + C$ 
+$\displaystyle\int x \ln x\mathrm dx = \frac{x^2}{2}\ln x - \frac{x^2}{4} + C$ 
+ $\displaystyle\int e^x \sin x\mathrm dx = \frac{e^x}{2}(\sin x - \cos x) + C$ 
+ $\displaystyle\int e^x \cos x\mathrm dx = \frac{e^x}{2}(\sin x + \cos x) + C$ 
 ### 六、常用凑微分积分
- $\displaystyle\int \frac{1}{\sqrt{1 - x^2}} \, dx = \arcsin x + C = -\arccos x + C$ 
- $\displaystyle\int \frac{1}{1 + x^2} \, dx = \arctan x + C = -\text{arccot } x + C$ 
- $\displaystyle\int \frac{1}{x\ln x} \, dx = \ln|\ln x| + C$ 
- $\displaystyle\int \frac{e^{\sqrt{x}}}{\sqrt{x}} \, dx = 2e^{\sqrt{x}} + C$ 
- $\displaystyle\int \frac{\sin\sqrt{x}}{\sqrt{x}} \, dx = -2\cos\sqrt{x} + C$ 
+ $\displaystyle\int \frac{1}{\sqrt{1 - x^2}}\mathrm dx = \arcsin x + C = -\arccos x + C$ 
+ $\displaystyle\int \frac{1}{1 + x^2}\mathrm dx = \arctan x + C = -\text{arccot } x + C$ 
+ $\displaystyle\int \frac{1}{x\ln x}\mathrm dx = \ln|\ln x| + C$ 
+ $\displaystyle\int \frac{e^{\sqrt{x}}}{\sqrt{x}}\mathrm dx = 2e^{\sqrt{x}} + C$ 
+ $\displaystyle\int \frac{\sin\sqrt{x}}{\sqrt{x}}\mathrm dx = -2\cos\sqrt{x} + C$ 
 >[!abstract] 练习
 >尝试推导上述公式
 
-Trivia: 魔法六边形
+# Trivia
+魔法六边形
 <svg xmlns="http://www.w3.org/2000/svg" width="177.5" height="133.1" version="1.1" style="font-family:Latin Modern Math; font-size:20px; fill:#ba00ff; stroke-width:0.32px;">
 <defs>
 	<marker style="overflow:visible;" orient="auto">
