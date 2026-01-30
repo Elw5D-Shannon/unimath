@@ -391,6 +391,21 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 >$\begin{align}\int\cos x(x^3+2x^2+3x+4)\mathrm dx&=(x^3 + 2x^2 + 3x + 4)\sin x\\&\qquad+(3x^2+4x+3)\cos x-(6x+4)\sin x-6\cos x+C\\&=(x^3+2x^2-3x)\sin x+(3x^2+4x-3)\cos x+C\end{align}$
 
 >[!bug] 待验证正确性
+
+但是我们一般其实用不到这么高阶的，而低阶的不用这个公式也能比较自然地做出来，比如：
+
+>[!example] 例题
+>设 $f(x)$ 在 $[a, b]$ 上有连续的二阶导数，且 $f(a) = f(b) = 0$，试证
+>$$\int_a^b f(x) \, dx = \frac{1}{2} \int_a^b (x - a)(x - b) f''(x) \, dx.$$
+
+>[!solution] 解析
+>$$\begin{aligned}\int_a^b(x-a)(x-b)f''(x)\text dx
+>&=\int_a^b(x-a)(x-b)\text df'(x)\\
+>&=(x-a)(x-b)f'(x)\bigg|_a^b-\int_a^b(2x-a-b)\text df(x)\\
+>&=-(2x-a-b)f(x)\bigg|_a^b+\int_a^b f(x)\text d(2x)\\
+>&=2\int_a^bf(x)\text dx.
+>\end{aligned}$$
+
 # Section 4  变限积分
 
 变限积分的意思就是这个积分的上/下限是变量。它最重要的性质就是$$\frac{\text d}{\text dx}\left(\int_a^xf(t)\text dt\right)=f(x).$$
