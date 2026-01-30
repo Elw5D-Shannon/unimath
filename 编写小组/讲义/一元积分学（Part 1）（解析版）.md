@@ -685,27 +685,21 @@ $\displaystyle\int x \ln x\mathrm dx = \frac{x^2}{2}\ln x - \frac{x^2}{4} + C$
 >[!abstract] 练习
 >尝试推导上述公式
 
-# Trivia
-魔法六边形
-<svg xmlns="http://www.w3.org/2000/svg" width="177.5" height="133.1" version="1.1" style="font-family:Latin Modern Math; font-size:20px; fill:#ba00ff; stroke-width:0.32px;">
-<defs>
-	<marker style="overflow:visible;" orient="auto">
-		<path transform="matrix(-0.4,0,0,-0.4,-4,0)" style="fill:#005c94; stroke:#005c94; stroke-width:1pt;" d="M 0,0 5,-5 -12.5,0 5,5 Z"/>
-	</marker>
-</defs>
-<g transform="translate(225.063,490.564)">
-	<path style="fill:#fefad7; stroke:#a40000; stroke-width:0.47;" d="m -105.7,-371.2 -57.7,0 -28.9,-50 28.9,-50 57.7,0 28.9,50 z"/>
-	<path style="fill:none; stroke:black;" d="m -163.5,-471.1 57.5,99.5"/>
-	<path style="fill:none; stroke:black;" d="M -192.2,-421.2 H -77.1"/>
-	<path style="fill:none; stroke:black;" d="m -106,-471.1 -57.3,99.9"/>
-	<text x="-179.5" y="-475.8" style="font-style:italic;">sin</text>
-	<text x="-226.1" y="-416.1" style="font-style:italic;">tan</text>
-	<text x="-116.9" y="-475.8" style="font-style:italic;">cos</text>
-	<text x="-178.1" y="-357.8" style="font-style:italic;">sec</text>
-	<text x="-74.9" y="-416.1" style="font-style:italic;">cot</text>
-	<text x="-117.8" y="-357.8" style="font-style:italic;">csc</text>
-	<text x="-147.3" y="-407.8" transform="scale(1.00188,0.998123)" style="font-family:Arial; font-size:42.7px; fill:black; stroke:white;">1</text>
-</g>
-</svg>
+# 碎碎念
+### 魔法六边形
+左边全是正，正弦/正切/正割
+右边全是余，余弦/余切/余割
+![[魔法六边形.svg]]
 
+你可以绕着这个六边形旋转来得到三角函数的商：
+![[魔法六边形-2.svg]]
+除此之外还有 $\sin x=\frac{\cos x}{\cot x},\cos x=\frac{\cot x}{\csc x}$...有时能够取得一些意想不到的效果。
+
+穿过六边形的中心 $1$，即为取倒数：
+$\sin x=\frac{1}{\csc x}$，$\cos x=\frac{1}{\sec x}$
+![[魔法六边形-3.svg]]
+防止在过度紧张的时候将正割/余割的倒数记错。
+
+对于每一个小倒三角 $\nabla$，三角形上边的两个角的平方和等于下面的角，用这种方法可以快速记忆三角函数平方和公式 $\tan^2 x+1=\sec^2 x, 1+\cot^2 x=\csc^2x$
+![[魔法六边形-5.svg]]
 ![[谏学高数者十思疏]]
