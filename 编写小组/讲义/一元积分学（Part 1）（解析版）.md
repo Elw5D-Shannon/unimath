@@ -374,12 +374,13 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 我们还可以继续把 $\int u' v^{(n)}\mathrm dx$ 撕开：$$\int u v^{(n+1)} dx = u v^{(n)} - u' v^{(n-1)} + u'' v^{(n-2)} - \dots + (-1)^n u^{(n)} v + (-1)^{n+1} \int u^{(n+1)} v dx$$
 如果被积函数的因式之一是多项式，且次数较高的时候，这个公式特别方便。通常来说，取 $u$ 为该多项式，然后逐步求 $v^{(n)},v^{(n-1)},\cdots,v$，再依次乘到一起（注意正负号！）
 >[!todo] 示例
->$\int (2x^3 + 3x^2 + 4x + 5)\mathrm e^x\mathrm dx$
+>求不定积分$\displaystyle\int (2x^3 + 3x^2 + 4x + 5)\mathrm e^x\mathrm dx$
 
 >[!solution] 解析
 >我们可以令 $u=2x^3 + 3x^2 + 4x + 5$，$v=\mathrm e^x$
 >$u' = 6x^2 + 6x + 4,\quad u'' = 12x + 6,\quad u''' = 12$
->于是$\begin{align*}\int (2x^3 + 3x^2 + 4x + 5) e^x dx &= (2x^3 + 3x^2 + 4x + 5)e^x - (6x^2 + 6x + 4)e^x + (12x + 6)e^x - 12e^x + C \\&= (2x^3 - 3x^2 + 10x - 5)e^x + C\end{align*}$
+>于是
+>$$\begin{align*}\int (2x^3 + 3x^2 + 4x + 5) \text e^x dx &= (2x^3 + 3x^2 + 4x + 5)\text e^x - \\&\qquad\qquad(6x^2 + 6x + 4)\text e^x + (12x + 6)e^x - 12\text e^x + C \\&= (2x^3 - 3x^2 + 10x - 5)\text e^x + C\end{align*}$$
 
 >[!example] 例题
 >求不定积分 $\int \cos x (x^3 + 2x^2 + 3x + 4) dx$
@@ -388,7 +389,10 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 >解：令 $u=x^3 + 2x^2 + 3x + 4$，$u'=3x^2+4x+3$，$u''=6x+4$，$u'''=6,u^{(4)}=0$
 >$v^{(4)}=\cos x,v'''=\sin x,v''=-\cos x,v'=-\sin x,v=\cos x$
 >于是
->$\begin{align}\int\cos x(x^3+2x^2+3x+4)\mathrm dx&=(x^3 + 2x^2 + 3x + 4)\sin x\\&\qquad+(3x^2+4x+3)\cos x-(6x+4)\sin x-6\cos x+C\\&=(x^3+2x^2-3x)\sin x+(3x^2+4x-3)\cos x+C\end{align}$
+>$\begin{align}\int\cos x(x^3+2x^2+3x+4)\mathrm dx&=(x^3 + 2x^2 + 3x + 4)\sin x+(3x^2+4x+3)\cos x\\&\qquad\qquad-(6x+4)\sin x-6\cos x+C\\&=(x^3+2x^2-3x)\sin x+(3x^2+4x-3)\cos x+C\end{align}$
+
+
+<br>
 
 >[!bug] 待验证正确性
 
@@ -396,7 +400,7 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 
 >[!example] 例题
 >设 $f(x)$ 在 $[a, b]$ 上有连续的二阶导数，且 $f(a) = f(b) = 0$，试证
->$$\int_a^b f(x) \, dx = \frac{1}{2} \int_a^b (x - a)(x - b) f''(x) \, dx.$$
+>$$\int_a^b f(x) \text dx = \frac{1}{2} \int_a^b (x - a)(x - b) f''(x) \text dx.$$
 
 >[!solution] 解析
 >$$\begin{aligned}\int_a^b(x-a)(x-b)f''(x)\text dx
@@ -406,7 +410,9 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 >&=2\int_a^bf(x)\text dx.
 >\end{aligned}$$
 
-# Section 4  变限积分
+<br>
+
+# Section 3  变限积分
 
 变限积分的意思就是这个积分的上/下限是变量。它最重要的性质就是$$\frac{\text d}{\text dx}\left(\int_a^xf(t)\text dt\right)=f(x).$$
 由此有一些推论：
@@ -439,6 +445,8 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 >&=\frac{1}{10}.
 >\end{aligned}$$
 
+<br>
+
 >[!example] 例题
 >已知 
 >$$\begin{cases} 
@@ -456,6 +464,7 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 >故 $$\frac{\text dy}{\text dx}=\frac{\text dy}{\text dt}\bigg/\frac{\text dx}{\text dt}=t\sin t.$$
 >$$\frac{\text d^2y}{\text dx^2}=\frac{\text d}{\text dt}\left(\frac{\text dy}{\text dx}\right)\bigg/\frac{\text dx}{\text dt}=\frac{\sin t+t\cos t}{\sin t^2}.$$
 
+<br>
 积分的题目往往比较综合，会和其他的知识点一起考察，比如……级数。
 
 >[!example] 例题
@@ -518,15 +527,17 @@ $$于是$$\begin{aligned}
 >解法1源自分部积分法，如果你尝试对需要求的定积分进行分部积分法，然后再用第一问的结论带进去，就会发现 $\displaystyle\int_0^1\text e^xf(x)\text dx$ 这一项被消掉了，这时如果你相对敏锐一点就会想到——这一项在不定积分中也会被消掉！这样我们就可以直接求出 $f(x)$ 的表达式了，再求定积分自然不在话下。剩下要注意就是<span style='color: orange' >不要忘记积分常数</span>。
 >解法2的思路类似于微分中值定理的题。我们看第一问的结论 $f'(x) + f(x) = 6x$，是不是很像微分中值定理中我们要凑的 $(\text e^xf(x))'$？这样就产生了第二种思路。后面的过程中仍然要注意<span class="emphasize">不要忘记积分常数</span>。
 
-# Section 5  定积分
+# Section 4  定积分
 
 由于定积分确定了上下限，因此定积分在不定积分的基础上多了不少有趣的性质，比如之前提到的在 $[-a,a]$ 有定义的奇函数在 $[-a,a]$ 的定积分为 $0$ ；
 除此之外还有很多性质，有些会为积分的化简提供便利，有些会给你挖个大坑。
 
 1. **周期函数每个周期内的定积分相同**
 简单来说，如果 $T$ 是 $f(x)$ 的周期，那么 $\displaystyle\int_a^{a+T}f(x)\mathrm dx=\int_{a+T}^{a+2T}f(x)\mathrm dx$.
+
+
 >[!example] 例题
->定积分 $\int_{-2026}^{2026} (x-[x])\mathrm dx$（其中 $[x]$ 表示不超过 $x$ 的最大整数）的值为\_\_\_\_\_\_\_\_。
+>定积分 $\int_{-2026}^{2026} (x-[x])\mathrm dx$（其中 $[x]$ 表示不超过 $x$ 的最大整数）的值为$\underline{\qquad}$。
 
 >[!solution] 解析
 >$f(x)=x-[x]$ 是周期为 $1$ 的函数，那么 $\displaystyle\int_{-2026}^{2026} (x-[x])\mathrm dx=5052\int_0^1(x-[x])\mathrm dx=5052\int_0^1x\mathrm dx=5052 \left[\frac{x^2}{2} \right]_0^1=2026$
@@ -609,6 +620,8 @@ $$于是$$\begin{aligned}
 
 %%不知道该放在哪的题
 另外，此题解析等所有说明都不要删除，保留一种探索感%%
+
+<br>
 
 >[!example] 例题
 >已知函数 $f(x), g(x)$ 在闭区间 $[a, b]$ 上连续，且 $f(x) > 0$，则极限 $\displaystyle \lim_{n \to \infty} \int_a^b g(x) \sqrt[n]{f(x)}\mathrm dx$ 的值为$\underline{\qquad}.$
