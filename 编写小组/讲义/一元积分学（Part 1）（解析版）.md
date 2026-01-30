@@ -374,12 +374,13 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 我们还可以继续把 $\int u' v^{(n)}\mathrm dx$ 撕开：$$\int u v^{(n+1)} dx = u v^{(n)} - u' v^{(n-1)} + u'' v^{(n-2)} - \dots + (-1)^n u^{(n)} v + (-1)^{n+1} \int u^{(n+1)} v dx$$
 如果被积函数的因式之一是多项式，且次数较高的时候，这个公式特别方便。通常来说，取 $u$ 为该多项式，然后逐步求 $v^{(n)},v^{(n-1)},\cdots,v$，再依次乘到一起（注意正负号！）
 >[!todo] 示例
->$\int (2x^3 + 3x^2 + 4x + 5)\mathrm e^x\mathrm dx$
+>求不定积分$\displaystyle\int (2x^3 + 3x^2 + 4x + 5)\mathrm e^x\mathrm dx$
 
 >[!solution] 解析
 >我们可以令 $u=2x^3 + 3x^2 + 4x + 5$，$v=\mathrm e^x$
 >$u' = 6x^2 + 6x + 4,\quad u'' = 12x + 6,\quad u''' = 12$
->于是$\begin{align*}\int (2x^3 + 3x^2 + 4x + 5) e^x dx &= (2x^3 + 3x^2 + 4x + 5)e^x - (6x^2 + 6x + 4)e^x + (12x + 6)e^x - 12e^x + C \\&= (2x^3 - 3x^2 + 10x - 5)e^x + C\end{align*}$
+>于是
+>$$\begin{align*}\int (2x^3 + 3x^2 + 4x + 5) \text e^x dx &= (2x^3 + 3x^2 + 4x + 5)\text e^x - \\&\qquad\qquad(6x^2 + 6x + 4)\text e^x + (12x + 6)e^x - 12\text e^x + C \\&= (2x^3 - 3x^2 + 10x - 5)\text e^x + C\end{align*}$$
 
 >[!example] 例题
 >求不定积分 $\int \cos x (x^3 + 2x^2 + 3x + 4) dx$
@@ -388,7 +389,10 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 >解：令 $u=x^3 + 2x^2 + 3x + 4$，$u'=3x^2+4x+3$，$u''=6x+4$，$u'''=6,u^{(4)}=0$
 >$v^{(4)}=\cos x,v'''=\sin x,v''=-\cos x,v'=-\sin x,v=\cos x$
 >于是
->$\begin{align}\int\cos x(x^3+2x^2+3x+4)\mathrm dx&=(x^3 + 2x^2 + 3x + 4)\sin x\\&\qquad+(3x^2+4x+3)\cos x-(6x+4)\sin x-6\cos x+C\\&=(x^3+2x^2-3x)\sin x+(3x^2+4x-3)\cos x+C\end{align}$
+>$\begin{align}\int\cos x(x^3+2x^2+3x+4)\mathrm dx&=(x^3 + 2x^2 + 3x + 4)\sin x+(3x^2+4x+3)\cos x\\&\qquad\qquad-(6x+4)\sin x-6\cos x+C\\&=(x^3+2x^2-3x)\sin x+(3x^2+4x-3)\cos x+C\end{align}$
+
+
+<br>
 
 >[!bug] 待验证正确性
 
@@ -396,7 +400,7 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 
 >[!example] 例题
 >设 $f(x)$ 在 $[a, b]$ 上有连续的二阶导数，且 $f(a) = f(b) = 0$，试证
->$$\int_a^b f(x) \, dx = \frac{1}{2} \int_a^b (x - a)(x - b) f''(x) \, dx.$$
+>$$\int_a^b f(x) \text dx = \frac{1}{2} \int_a^b (x - a)(x - b) f''(x) \text dx.$$
 
 >[!solution] 解析
 >$$\begin{aligned}\int_a^b(x-a)(x-b)f''(x)\text dx
@@ -405,6 +409,8 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 >&=-(2x-a-b)f(x)\bigg|_a^b+\int_a^b f(x)\text d(2x)\\
 >&=2\int_a^bf(x)\text dx.
 >\end{aligned}$$
+
+<br>
 
 # Section 4  变限积分
 
@@ -439,6 +445,8 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 >&=\frac{1}{10}.
 >\end{aligned}$$
 
+<br>
+
 >[!example] 例题
 >已知 
 >$$\begin{cases} 
@@ -456,6 +464,7 @@ I_n &= \int_0^{\frac{\pi}{4}} \sec^n x \mathrm dx = \int_0^{\frac{\pi}{4}} \sec^
 >故 $$\frac{\text dy}{\text dx}=\frac{\text dy}{\text dt}\bigg/\frac{\text dx}{\text dt}=t\sin t.$$
 >$$\frac{\text d^2y}{\text dx^2}=\frac{\text d}{\text dt}\left(\frac{\text dy}{\text dx}\right)\bigg/\frac{\text dx}{\text dt}=\frac{\sin t+t\cos t}{\sin t^2}.$$
 
+<br>
 积分的题目往往比较综合，会和其他的知识点一起考察，比如……级数。
 
 >[!example] 例题
@@ -525,8 +534,10 @@ $$于是$$\begin{aligned}
 
 1. **周期函数每个周期内的定积分相同**
 简单来说，如果 $T$ 是 $f(x)$ 的周期，那么 $\displaystyle\int_a^{a+T}f(x)\mathrm dx=\int_{a+T}^{a+2T}f(x)\mathrm dx$.
+
+
 >[!example] 例题
->定积分 $\int_{-2026}^{2026} (x-[x])\mathrm dx$（其中 $[x]$ 表示不超过 $x$ 的最大整数）的值为\_\_\_\_\_\_\_\_。
+>定积分 $\int_{-2026}^{2026} (x-[x])\mathrm dx$（其中 $[x]$ 表示不超过 $x$ 的最大整数）的值为$\underline{\qquad}$。
 
 >[!solution] 解析
 >$f(x)=x-[x]$ 是周期为 $1$ 的函数，那么 $\displaystyle\int_{-2026}^{2026} (x-[x])\mathrm dx=5052\int_0^1(x-[x])\mathrm dx=5052\int_0^1x\mathrm dx=5052 \left[\frac{x^2}{2} \right]_0^1=2026$
