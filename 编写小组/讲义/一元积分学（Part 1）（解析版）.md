@@ -310,7 +310,7 @@ a_n &= \int_0^1 x (1-x)^n\mathrm dx = \int_0^1 (1-t) t^n\mathrm dt \\
 >可以看到，经过两次分部积分之后，$\int\mathrm e^x \sin x\mathrm dx$ 又一次出现了。
 >果断将它移到等式左边，直接同时除以 $2$：
 >$\int\mathrm e^x \sin x\mathrm dx=\mathrm e^x \sin x -\mathrm e^x \cos x - \int\mathrm e^x \sin x\mathrm dx\Rightarrow2\int\mathrm e^x \sin x\mathrm dx=\mathrm e^x \sin x -\mathrm e^x \cos x$
->因此 $\displaystyle\int\mathrm e^x \sin x\mathrm dx=\frac{\mathrm e^x \sin x -\mathrm e^x \cos x}{2}$
+>因此 $\displaystyle\int\mathrm e^x \sin x\mathrm dx=\frac{\mathrm e^x \sin x -\mathrm e^x \cos x}{2}+C$
 
 >[!hint] 提示
 >在进行循环式时，一般要多次求分部积分。如果你分部积了一次拿不准的话，再分部积一次，也许会有意外收获。
