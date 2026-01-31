@@ -12,3 +12,14 @@
     --callout-color: 181,230,29;
     --callout-icon: lucide-calculator;
 }
+
+.tittle{
+    font-weight: bold;
+    text-align: center;
+}
+
+.Tittle{
+    font-weight: bold;
+    text-align: center;
+    font-size:24px;
+}
