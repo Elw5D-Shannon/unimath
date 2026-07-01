@@ -5,3 +5,5 @@
 .obsidian/*
 !.obsidian/snippets/
 /介值定理例题.md
+*.base
+/conflict-files-obsidian-git.md
